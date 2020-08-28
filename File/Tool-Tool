@@ -1,0 +1,318 @@
+# Kiểm tra cập nhật
+echo
+echo " Kiểm tra cập nhật..."
+echo
+curl -# https://raw.githubusercontent.com/kakathic/tool-tool/master/README.md -o /sdcard/k.k
+kiemtra=`grep "Version=" /sdcard/k.k`
+if [ "$kiemtra" == "Version=1.0" ];then
+echo
+else
+curl -# https://raw.githubusercontent.com/kakathic/tool-tool/master/File/Tool-Tool -o /sdcard/Tool-Tool
+su -c "cp -rf /sdcard/Tool-Tool /bin"
+su -c "Tool-Tool"
+fi
+# Tải Tool-Tool
+if [ -e /sdcard/Tool-Tool ];then
+echo
+else
+echo
+echo " Đang tải dữ liệu..."
+echo
+curl -# https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/SD.txt -o /sdcard/SD
+tar -xf /sdcard/SD -C /sdcard
+rm -rf /sdcard/SD
+fi
+# Sao lưu
+if [ -e /sdcard/Android/.restore/system/media/bootanimation.zip ];then
+echo
+else
+echo
+echo " Đang sao lưu vui lòng chờ..."
+echo
+cp -rf /system/media /sdcard/Android/.restore/system
+cp -rf /system/fonts /sdcard/Android/.restore/system
+fi
+menu()
+{
+rm -rf /sdcard/k.k
+clear
+#Mặc định – 0 Đen – 30 Đỏ – 31 Xanh lá – 32 Vàng – 33
+#Xanh dương – 34 Hồng – 35 Xanh lam – 36 Trắng – 37
+echo
+echo
+echo
+echo -e "\e[32;1m TOOL TOOL MIUI \e[0m" 
+echo 
+echo
+echo 
+echo -e "\e[31;1m Nhập số tương ứng với các hành động bên dưới \e[0m"
+echo
+echo -e "\e[32;1m Menu Chính: \e[0;1m"
+echo "
+ 1) Cài đặt Tool Mod
+ 2) Mtz thành Theme mặc định 
+ 3) Cài File và Apk
+ 4) Xoá App, File
+ 5) Thanh trạng thái
+ 6) Màn hình chính và Tiện ích
+ 7) Cài đặt tự động
+ 8) Nhiều tính năng khác
+ 9) Xoá Tool Mod
+ 10) Sao lưu và khôi phục
+ 11) Khởi động lại 
+ 12) Thoát khỏi Tool-Tool"
+echo
+echo -e "\e[32;1m Phát triển bởi kakathic - Chúc các bạn vui vẻ."
+close ()
+{
+echo -e "\e[36;1m\c"
+echo -e "\c Nhập số sai vui lòng nhập lại."
+}
+echo -e "\e[31;1m"
+echo -e "\c Nhập số: \c"
+echo -en "\e[33;1m"
+read kk
+echo
+echo -en "\e[0m"
+if [ "$kk" == "1" ];then
+sgmegne ()
+
+{
+clear
+echo
+echo -e "\e[32;1m Mod Giao diện \e[0;1m"
+echo
+echo
+echo "\c > Nó sẽ thay icon của nga thành icon Mod lại nhìn
+
+ đẹp hơn, thêm âm lịch ở trên thanh trạng thái
+ 
+ thêm menu nguồn tiện ích hơn, thêm ảnh đẹp
+ 
+ thêm một số theme.
+ 
+ 
+ 1) Tiếp tục
+ 
+ 2) Trở lại Menu chính
+ 
+ 
+ Nhập: "
+ read theme
+ ksjs ()
+ {
+ echo
+ echo "\c Sai số vui lòng nhập lại. "
+ }
+if [ "$theme" == "1" ];then
+echo
+echo " Đang tải dữ liệu..."
+echo
+#curl -#
+#tar -xf -C
+echo
+echo " Tiến hành cài đặt..."
+echo
+mount -o rw,remount / 2> /dev/null
+mount -o rw,remount /system 2> /dev/null
+rm -rf /system/media/theme/default/*
+rm -rf /system/etc/precust_theme/*
+rm -rf /system/media/theme/miui_mod_icon/*
+rm -rf /system/media/theme/.data/*
+rm -rf /system/media/wallpaper/*
+cp -rf /sdcard/Download/1111/* /
+su -c "Tool-Chmod"
+mount -o ro,remount /system 2> /dev/null
+mount -o ro,remount / 2> /dev/null
+echo
+echo "\a - Xong."
+sleep 3
+killall com.miui.home
+killall com.android.systemui
+menu return
+elif [ "$theme" == "2" ];then
+menu return
+else
+ksjs return; sleep 2; sgmegne return
+fi
+
+}
+sgmegne return
+elif [ "$kk" == "2" ];then
+echo " Đúng"
+elif [ "$kk" == "3" ];then
+echo " Đúng"
+elif [ "$kk" == "4" ];then
+xapp()
+{
+clear
+echo
+echo
+echo "\c Xoá File và Ứng dụng hệ thống
+
+ 1) Xoá Ứng dụng đề xuất
+ 2) Xoá Theo đường dẫn
+ 3) Trở lại
+ 
+ Nhập: "
+ read farm
+if [ "$farm" == "1" ];then
+clear
+echo
+echo
+echo "\c Xoá Tự động gồm các ứng dụng sau: Gia đình, Email, Thanh toán China,
+ Mi Browser, Âm thanh Google, Dịch vụ in Google, Mi Drive. 
+ 
+ 1) Tiếp tục
+ 2) Trở lại
+ 
+ Nhập: "
+read rmapp
+if [ "$rmapp" == "1" ];then
+clear
+echo "\c Đang tiến hành dọn dẹp app.";sleep 1;echo "\c.";sleep 1;echo "\c.";sleep 1;echo "\c.";
+mount -o rw,remount / 2> /dev/null
+mount -o rw,remount /system 2> /dev/null
+rm -fr /system/priv-app/MiBrowser
+rm -fr /system/app/PaymentService
+rm -fr /system/app/greenguard
+rm -fr /system/app/Email
+rm -fr /system/app/MiDrive
+rm -fr /system/product/app/CloudPrint2
+rm -fr /system/product/app/SoundPickerGoogle
+mount -o ro,remount /system 2> /dev/null
+mount -o ro,remount / 2> /dev/null
+echo "\a - Xong."
+sleep 3
+menu return
+else
+xapp return
+fi
+elif [ "$farm" == "2" ];then
+clear
+echo
+echo
+echo "\c Xoá theo đường dẫn Tệp hoặc thư mục
+ Nhập: 0) Trở lại
+ 
+ Nhập đường dẫn: "
+read ddfile
+if [ "$ddfile" == "0" ];then
+xapp return
+else
+mount -o rw,remount / 2> /dev/null
+mount -o rw,remount /system 2> /dev/null
+mount -o rw,remount /vendor 2> /dev/null
+mv -f $ddfile
+mount -o ro,remount /vendor 2> /dev/null
+mount -o ro,remount /system 2> /dev/null
+mount -o ro,remount / 2> /dev/null
+echo "\a - Xong."
+sleep 3
+menu return
+fi
+else
+menu return
+fi
+}
+xapp return
+elif [ "$kk" == "5" ];then
+echo " Đúng"
+elif [ "$kk" == "6" ];then
+echo " Đúng"
+elif [ "$kk" == "7" ];then
+echo " Đúng"
+elif [ "$kk" == "8" ];then
+echo " Đúng"
+elif [ "$kk" == "9" ];then
+clear
+echo
+echo
+echo "\c Cài đặt hoặc Cập nhật App, tệp vào hệ thống hàng loạt.
+
+ 1) Tiếp tục
+ 2) Trở lại Menu chính
+ 
+ Nhập: "
+read app
+if [ "$app" == "1" ];then
+clear
+echo
+echo
+echo "\c Đang tiến hành sao chép";sleep 1;echo "\c.";sleep 1;echo "\c.";sleep 1;echo "\c.";
+mount -o rw,remount / 2> /dev/null
+mount -o rw,remount /system 2> /dev/null
+mount -o rw,remount /vendor 2> /dev/null
+cp -rf /sdcard/Tool-Tool/system/* /system
+cp -rf /sdcard/Tool-Tool/vendor/* /vendor
+su -c "Tool-Chmod"
+mount -o ro,remount /vendor 2> /dev/null
+mount -o ro,remount /system 2> /dev/null
+mount -o ro,remount / 2> /dev/null
+echo "\a - Xong."
+sleep 3
+menu return
+else
+menu return
+fi
+elif [ "$kk" == "10" ];then
+clear
+curl
+sh
+elif [ "$kk" == "11" ];then
+clear
+curl
+
+elif [ "$kk" == "12" ];then
+clear
+echo
+echo
+echo " Dọn dẹp Sao lưu nó sẽ tăng bộ nhớ trong
+ đồng nghĩa với việc bạn không thể khôi phục."
+
+echo
+echo "\c Bạn có muốn tiếp tục không ?
+ 
+ 1) Tiếp tục Xoá.
+ 2) Trở lại Menu chính.
+ 
+ Nhập: "
+read xoa
+if [ "$xoa" == "1" ];then
+clear
+echo
+echo "\c Đang dọn dẹp"
+sleep 1
+echo "\c."
+sleep 1
+echo "\c."
+sleep 1
+echo "\c."
+rm -rf /sdcard/Android/.restore/*
+sleep 3
+echo "\a - Xong."
+menu return
+else
+menu return
+fi
+elif [ "$kk" == "13" ];then
+su -c "reboot"
+elif [ "$kk" == "14" ];then
+clear
+exit
+
+
+
+
+
+else
+close return; sleep 2;menu return
+fi
+}
+menu return
+
+echo -en "\e[0m "
+exit
+
+
+
