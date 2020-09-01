@@ -3,7 +3,7 @@ echo
 echo " Kiểm tra cập nhật..."
 echo
 kiemtra=`curl -# https://raw.githubusercontent.com/kakathic/tool-tool/master/README.md | egrep "Version="`
-if [ "$kiemtra" == "Version=1.2" ];then
+if [ "$kiemtra" == "Version=1.3" ];then
 echo "
  Mới nhất
  "
@@ -50,43 +50,33 @@ fi
 Tool ()
 {
 clear
+pbv=`echo $kiemtra | sed -e "s/Version=//g"`
 #Mặc định – 0 Đen – 30 Đỏ – 31 Xanh lá – 32 Vàng – 33
 #Xanh dương – 34 Hồng – 35 Xanh lam – 36 Trắng – 37
-echo
-echo
-echo
-echo -e "\e[32;1m TOOL TOOL MIUI \e[0m" 
-echo 
-echo
-echo 
-echo -e "\e[31;1;2m Nhập số tương ứng với các hành động bên dưới \e[0m"
-echo
-echo -e "\e[32;1;2m Menu Chính: \e[0;1;2m"
-echo "
- 1) Cài đặt Tool Mod
+echo -e "\e[32;1m
+
  
- 2) Mod Theme Mtz
  
- 3) Cài File và Apk
+ TOOL TOOL MIUI $pbv\e[0m
+  
+  
+  "
+echo -e "\e[31;1m Nhập số tương ứng với các hành động bên dưới \e[0m
+"
+echo -e "\e[32;1m Menu Chính: \e[0;1;2m"
+echo -e "
+ (\e[0m\e[33;1m1\e[0;1;2m) Cài đặt Tool Mod (\e[0m\e[33;1m2\e[0;1;2m) Mod Theme Mtz
  
- 4) Xoá App và File
+ (\e[0m\e[33;1m3\e[0;1;2m) Cài File và Apk (\e[0m\e[33;1m4\e[0;1;2m) Xoá App và File
+
+ (\e[0m\e[33;1m5\e[0;1;2m) Thanh trạng thái (\e[0m\e[33;1m6\e[0;1;2m) Màn hình chính
  
- 5) Thanh trạng thái
+ (\e[0m\e[33;1m7\e[0;1;2m) Apktool X (\e[0m\e[33;1m8\e[0;1;2m) Nhiều tính năng khác 
  
- 6) Màn hình chính và Tiện ích
+ (\e[0m\e[33;1m9\e[0;1;2m) Xoá Tool Mod (\e[0m\e[33;1m10\e[0;1;2m) Đăng nhập Tài khoản 
  
- 7) Apktool X
- 
- 8) Nhiều tính năng khác
- 
- 9) Xoá Tool Mod
- 
- 10) Đăng nhập Tài khoản
- 
- 11) Khởi động lại máy
- 
- 12) Thoát khỏi Tool-Tool"
-echo
+ (\e[0m\e[33;1m11\e[0;1;2m) Reboot máy (\e[0m\e[33;1m12\e[0;1;2m) Thoát Tool-Tool"
+echo -e "\e[0m"
 echo -e "\e[32;1m Phát triển bởi kakathic - Chúc các bạn vui vẻ."
 close ()
 {
@@ -192,7 +182,304 @@ fi
 sgmegne return
 
 elif [ "$kk" == "2" ];then
-echo " Đúng"
+
+themepro ()
+
+{
+clear
+clear
+
+
+echo
+echo -e "\e[32;1m Mod Theme Mtz \e[0;1m"
+echo
+echo
+echo
+echo "\c Vui lòng chọn các tiện ích sau:
+
+
+ 1) Chuyển theme Mtz thành theme mặc định
+ 
+ 2) Chuyển Clock thành Gadget Widget
+ 
+ 3) Tách Clock từ Mtz thành clock riêng
+
+ 4) Trở lại Menu Chính 
+ 
+
+  
+ Nhập: "
+
+  read vipclock
+
+
+
+
+
+
+if [ "$vipclock" == "1" ];then
+themes ()
+{
+echo " 
+ Chuyển Theme Mtz thành Theme Mặc định
+
+
+"
+echo "\c Vui lòng điền đường dẫn đến file Mtz.
+
+ Nhập 0) để trở lại
+ 
+
+ Nhập: "
+read themc 
+if [ "$themc" == "0" ];then
+themepro return
+fi
+
+
+
+mkdir -p /sdcard/MIUI/kakathic
+mv -f "$themc" /sdcard/MIUI/kakathic/kk.zip
+unzip -oq /sdcard/MIUI/kakathic/kk.zip -d /sdcard/MIUI/kakathic
+rm -rf /sdcard/MIUI/kakathic/*.xml
+mkdir -p /sdcard/MIUI/.wallpaper
+cp -rf /sdcard/MIUI/kakathic/wallpaper/* /sdcard/MIUI/.wallpaper
+rm -rf /sdcard/MIUI/kakathic/wallpaper
+su -c "cp -rf /sdcard/MIUI/kakathic/preview/* /system/media/theme/.data/preview/default
+rm -rf /sdcard/MIUI/kakathic/preview
+cp -rf /sdcard/MIUI/kakathic/boots/* /system/media
+rm -rf /sdcard/MIUI/kakathic/boots
+curl -# https://raw.githubusercontent.com/kakathic/clock_pro/master/font.txt -o /sdcard/font
+tar -xf /sdcard/font -C /sdcard/MIUI
+cp -rf /sdcard/MIUI/kakathic/fonts/Roboto-Regular.ttf /sdcard/MIUI
+mv -f /sdcard/MIUI/kakathic/fonts/Roboto-Regular.ttf /sdcard/MIUI/theme/.data/content/fonts/font-mod.mrc
+mv -f /sdcard/MIUI/Roboto-Regular.ttf /sdcard/MIUI/theme/.data/content/fonts_fallback/font-mod2.mrc
+rm -rf /sdcard/MIUI/kakathic/fonts
+mv -f /sdcard/MIUI/kakathic/clock_2x4 /system/media/theme/.data/content/clock_2x4/clock.mrc
+mv -f /sdcard/MIUI/kakathic/clock_3x4 /system/media/theme/.data/content/clock_3x4/clock.mrc
+cp -rf /sdcard/MIUI/kakathic/* /system/media/theme/default
+rm -rf /sdcard/MIUI/kakathic"
+echo "\a
+ Xong.
+ 
+ Chat phím bất kỳ trở lại Menu chính.
+
+ 
+ "
+read
+Tool return
+}
+themes return
+
+elif [ "$vipclock" == "2" ];then
+clgg ()
+{
+echo " 
+ Chuyển Clock thành file Gadgets
+
+
+"
+echo "\c Vui lòng điền đường dẫn đến file Mtz.
+
+ Nhập 0) để trở lại
+
+ Nhập: "
+read clock 
+if [ "$clock" == "0" ];then
+themepro return
+fi
+
+mkdir -p /sdcard/MIUI/kakathic
+mv -f "$clock" /sdcard/MIUI/kakathic/kk.zip
+unzip -oq /sdcard/MIUI/kakathic/kk.zip -d /sdcard/MIUI/kakathic
+if [ -e /sdcard/MIUI/kakathic/clock_2x4 ];then
+echo "
+ >  Tải dữ liệu Online...
+
+"
+curl -# https://raw.githubusercontent.com/kakathic/clock_pro/master/gadget.txt -o /sdcard/gadg
+cp -rf /sdcard/MIUI/kakathic/clock_2x4 /sdcard/MIUI
+cp -rf /sdcard/MIUI/kakathic/preview/preview_clock_2x4_0.png /sdcard/MIUI
+rm -rf /sdcard/MIUI/kakathic/*
+tar -xf /sdcard/gadg -C /sdcard/MIUI/kakathic
+unzip -oq /sdcard/MIUI/clock_2x4 -d /sdcard/MIUI/kakathic/content
+mv -f /sdcard/MIUI/preview_clock_2x4_0.png /sdcard/MIUI/kakathic/preview/preview_0.jpg
+sed -i -e 's/Clock/Gadget/g' /sdcard/MIUI/kakathic/content/manifest.xml
+rm -rf /sdcard/MIUI/clock_2x4
+rm -rf /sdcard/gadg
+else
+echo " 
+ >  Lỗi Theme không có clock_2x4...
+ 
+ Chat phím bất kỳ trở lại.
+
+"
+rm -rf /sdcard/MIUI/kakathic
+read
+clgg return
+fi
+echo "\c
+ Vui lòng nhập tên Clock
+ 
+ Nhập: "
+ read tencl
+sed -i -e "s/Clock Mod/$tencl/g" /sdcard/MIUI/kakathic/description.xml
+echo "\c
+ Vui lòng chọn chiều rộng và dài Clock
+ 
+ 
+ mặc định 4x6 thì điền 4:2
+ 
+ lớn hơn 6x7 thì điền 6:3
+
+
+ Nhập: "
+read sizecl
+sed -i -e "s/4:2/$sizecl/g" /sdcard/MIUI/kakathic/description.xml
+echo "
+ Đóng gói thành Mtz...
+"
+cd /sdcard/MIUI/kakathic
+zip -q -r9 /sdcard/MIUI/$tencl.mtz *
+
+echo "\c
+ Bạn có muốn sao chép Clock vào hệ thống luôn không ?
+ 
+ 
+ 1) Có
+ 
+ 2) Không
+ 
+ 
+ Nhập: "
+ read fwwnwt
+if [ "$fwwnwt" == "1" ];then
+su -c "cp -rf /sdcard/MIUI/$tencl.mtz /system/media/theme/default/gadgets"
+echo "
+ Vào /sdcard/MIUI/ sẽ thấy $tencl.mtz của bạn
+ "
+killall com.miui.home
+else
+echo "
+ Vào /sdcard/MIUI/ sẽ thấy $tencl.mtz của bạn
+ "
+fi
+rm -rf /sdcard/MIUI/kakathic
+echo "\a
+ Xong.
+ 
+ Chat phím bất kỳ trở lại Menu chính.
+
+ 
+ "
+read
+Tool return
+}
+clgg return
+
+
+elif [ "$vipclock" == "3" ];then
+hhakd ()
+{
+echo " 
+ Tách Clock 2x4 khỏi Theme Mtz
+
+
+"
+echo "\c Vui lòng điền đường dẫn đến file Mtz.
+
+ Nhập 0) để trở lại
+
+ Nhập: "
+read clock2 
+if [ "$clock2" == "0" ];then
+themepro return
+fi
+
+mkdir -p /sdcard/MIUI/kakathic
+mv -f "$clock2" /sdcard/MIUI/kakathic/kk.zip
+unzip -oq /sdcard/MIUI/kakathic/kk.zip -d /sdcard/MIUI/kakathic
+if [ -e /sdcard/MIUI/kakathic/clock_2x4 ];then
+echo "
+ >  Tải dữ liệu Online...
+
+"
+curl -# https://raw.githubusercontent.com/kakathic/clock_pro/master/clock_mod.txt -o /sdcard/clock_mod.txt
+tar -xf /sdcard/clock_mod.txt -C /sdcard/MIUI
+cp -rf /sdcard/MIUI/kakathic/clock_2x4 /sdcard/MIUI
+cp -rf /sdcard/MIUI/kakathic/preview/preview_clock_2x4_0.png /sdcard/MIUI
+mv /sdcard/MIUI/clock_2x4 /sdcard/MIUI/theme/.data/content/clock_2x4/55741d25-eb4e-4c17-8f8e-b6640107def9.mrc
+rm -rf /sdcard/MIUI/kakathic
+rm -rf /sdcard/clock_mod.txt
+else
+echo " 
+ >  Lỗi Theme không có clock_2x4...
+
+ Chat phím bất kỳ trở lại.
+ 
+"
+rm -rf /sdcard/MIUI/kakathic
+read
+hhakd return
+fi
+
+echo "\c
+ Vui lòng nhập đường dẫn đến file ảnh .png
+ 
+ 
+ Nhập 0)
+ 
+ để dùng ảnh mặc định của theme
+ 
+ nếu không có ảnh mặc định sẽ dùng ảnh
+ 
+ mặc định file online.
+
+ Nhập: "
+read pngcl
+if [ "$pngcl" == "0" ];then
+echo "
+ >  Dùng ảnh mặc định...
+
+"
+mv /sdcard/MIUI/preview_clock_2x4_0.png  /sdcard/MIUI/theme/.data/preview/theme/8c3ab570-3711-48db-be6d-99c9992cdb0c/preview_clock_2x4_0.png
+else
+mv $pngcl /sdcard/MIUI/theme/.data/preview/theme/8c3ab570-3711-48db-be6d-99c9992cdb0c/preview_clock_2x4_0.png
+echo "
+ >  Cài ảnh preview thành công...
+
+"
+fi
+echo "
+ Clock của bạn đã được thêm vào tiện ích.
+ 
+ "
+sleep 1
+echo "\a >  Tools Tách Clock_2x4 by kakathic...
+
+"
+echo "\a
+ Xong.
+ 
+ Chat phím bất kỳ trở lại Menu chính.
+
+ 
+ "
+read
+Tool return
+}
+hhakd return
+
+elif [ "$vipclock" == "4" ];then
+Tool return
+else
+echo "\c
+ Nhập số sai vui lòng nhập lại."
+sleep 2
+themepro return
+fi
+}
+themepro return
 elif [ "$kk" == "3" ];then
 clear
 echo
@@ -235,7 +522,7 @@ echo -n "\a - Xong.
 read
 reboot
 else
-menu return
+Tool return
 fi
 elif [ "$kk" == "4" ];then
 adxoa ()
