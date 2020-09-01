@@ -5,7 +5,8 @@ echo
 kiemtra=`curl -# https://raw.githubusercontent.com/kakathic/tool-tool/master/README.md | egrep "Version="`
 if [ "$kiemtra" == "Version=1.2" ];then
 echo "
- Mới nhất"
+ Mới nhất
+ "
 else
 curl -# https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/Tool-Tool.sh -o /sdcard/Tool-Tool2
 mount -o rw,remount / 2> /dev/null
@@ -21,24 +22,21 @@ if [ -e /sdcard/Tool-Tool ];then
 echo
 else
 curl -# https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/Tool-Tool.txt -o /sdcard/TT2
-tar -jxf /sdcard/TT2 -C /sdcard/Tool-Tool/.tmp
-rm -rf /sdcard/TT2
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
-cp -rf /sdcard/Tool-Tool/.tmp/sdcard/* /sdcard
-cp -rf /sdcard/Tool-Tool/.tmp/system/* /system
+tar -jxf /sdcard/TT2 -C /
+rm -rf /sdcard/TT2
 chmod -R 777 /bin/7za
 chmod -R 777 /bin/Tool-Tool
 chmod -R 777 /bin/Tool-Chmod
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
-rm -rf /sdcard/Tool-Tool/.tmp/system
-rm -rf /sdcard/Tool-Tool/.tmp/sdcard
 if [ -e /bin/zip ];then
 echo
 else
 curl -# https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/zip.7z -o /sdcard/TT3
-tar -jxf /sdcard/TT3 -C /sdcard/Tool-Tool/.tmp
+cd /storage/emulated/0/Tool-Tool/.tmp
+7za x -y /sdcard/TT3
 cp -rf /sdcard/Tool-Tool/.tmp/zip/* /bin
 chmod -R 777 /bin/zip
 chmod -R 777 /bin/zipsigner-3.0-dexed.jar
@@ -48,6 +46,7 @@ rm -rf /sdcard/Tool-Tool/.tmp/zip
 rm -rf /sdcard/TT3
 fi
 fi
+exit
 Tool ()
 {
 clear
