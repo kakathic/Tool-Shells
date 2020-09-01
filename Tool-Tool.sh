@@ -6,4 +6,6 @@ su -c "cp -rf /sdcard/MIUI/Tool-Tool /bin"
 rm -rf /sdcard/MIUI/Tool-Tool
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
+vip=`pwd`
+rm -rf /$vip/Tool-To*.sh
 su -c "Tool-Tool"
