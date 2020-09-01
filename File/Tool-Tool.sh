@@ -3,19 +3,19 @@ echo
 echo " Kiểm tra cập nhật..."
 echo
 kiemtra=`curl -# https://raw.githubusercontent.com/kakathic/tool-tool/master/README.md | egrep "Version="`
-if [ "$kiemtra" == "Version=1.3" ];then
+if [ "$kiemtra" == "Version=1.4" ];then
 echo "
  Mới nhất
  "
 else
-curl -# https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/Tool-Tool.sh -o /sdcard/Tool-Tool2
+# kakathic - Tool Mod - Hiếu Tools
+curl -# https://raw.githubusercontent.com/kakathic/tool-tool/master/File/Tool-Tool.sh -o /sdcard/MIUI/Tool-Tool
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
-cp -rf /sdcard/Tool-Tool2 /bin
-chmod -R 777 /bin/Tool-Tool2
+mv -f /sdcard/MIUI/Tool-Tool /bin/Tool-Tool
+chmod -R 777 /sdcard/MIUI/Tool-Tool
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
-rm -rf /sdcard/Tool-Tool2
 su -c "Tool-Tool"
 fi
 if [ -e /sdcard/Tool-Tool ];then
@@ -84,7 +84,7 @@ echo -e "\e[36;1m\c"
 echo -e "\c Nhập số sai vui lòng nhập lại."
 }
 echo -e "\e[31;5m"
-echo -e "\c Nhập số: \c"
+echo "\c Nhập số: \c"
 echo -en "\e[33;1m"
 read kk
 echo
@@ -122,7 +122,7 @@ echo
 if [ -e /storage/emulated/0/Tool-Tool/.tmp/Toolmod ];then
 echo
 else
-curl -# --limit-rate 10000k http://www.mediafire.com/file/y2u7xvsrddj6gwj/Tool-Mod.7z/file -o /sdcard/filetmp.k
+curl -# http://www.mediafire.com/file/y2u7xvsrddj6gwj/Tool-Mod.7z/file -o /sdcard/filetmp.k
 link1=`grep "http://download" /sdcard/filetmp.k`
 link2=`echo $link1 | sed -e 's/href="//g' -e 's/">//g'`
 curl -# $link2 -o /sdcard/Tool-Tool/.tmp/Toolmod
@@ -139,11 +139,11 @@ curl -# $link22 -o /sdcard/Tool-Tool/.tmp/Font
 rm -rf /sdcard/filetmp.k
 fi
 
-cd /storage/emulated/0/Tool-Tool/.tmp
-7za x -y /storage/emulated/0/Tool-Tool/.tmp/Toolmod
-7za x -y /storage/emulated/0/Tool-Tool/.tmp/Font
-cp -rf /storage/emulated/0/Tool-Tool/.tmp/fonts /storage/emulated/0/Tool-Tool/.tmp/system
-rm -rf /storage/emulated/0/Tool-Tool/.tmp/fonts
+cd /storage/emulated/0/Tool-Tool/.tmp/
+7za x -y Toolmod
+7za x -y Font
+cp -rf fonts /storage/emulated/0/Tool-Tool/.tmp/system
+rm -rf fonts
 clear
 echo
 echo " Tiến hành cài đặt..."
@@ -156,13 +156,14 @@ rm -rf /system/media/theme/miui_mod_icon
 rm -rf /system/media/theme/.data
 rm -rf /system/media/wallpaper
 rm -rf /data/system/theme_magic/customized_icons
+rm -rf /data/system/theme/*
 cp -rf /storage/emulated/0/Tool-Tool/.tmp/sdcard/* /sdcard
 cp -rf /storage/emulated/0/Tool-Tool/.tmp/system/* /system
-rm -rf /storage/emulated/0/Tool-Tool/.tmp/sdcard
-rm -rf /storage/emulated/0/Tool-Tool/.tmp/system
 su -c "Tool-Chmod"
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
+rm -rf /storage/emulated/0/Tool-Tool/.tmp/sdcard
+rm -rf /storage/emulated/0/Tool-Tool/.tmp/system
 echo -n "\a Xong.
 
  Chat chữ bất kỳ để Reset lại máy."
