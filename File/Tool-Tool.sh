@@ -46,7 +46,7 @@ rm -rf /sdcard/Tool-Tool/.tmp/zip
 rm -rf /sdcard/TT3
 fi
 fi
-exit
+
 Tool ()
 {
 clear
