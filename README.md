@@ -1,6 +1,6 @@
 # Tool-Tool
 
-Version=1.2
+Version=1.3
 
 Phát triển mod miui - Giao diện MIUI 
 
