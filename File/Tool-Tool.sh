@@ -1535,6 +1535,8 @@ echo -n "
  
  4) Chuyển nền Quốc tế sang China
  
+ 5) Cài đặt YouTube Root
+ 
  0) Trở lại
  
  
@@ -1543,6 +1545,39 @@ echo -n "
 
 if [ "$tck" == "0" ];then
 Tool return
+elif [ "$tck" == "5" ];then
+clear
+echo -n "\e[32;1m Cài đặt YouTube Root
+
+
+ 1) Tiếp tục
+ 
+ 2) Trở lại
+ 
+ 
+ Nhập: "
+read yt
+echo
+if [ "$yt" == "1" ];then
+Link='http://www.mediafire.com/file/tjn9dhxf4mdwsl4/YouTube-Root.apk/file'
+Get=`curl -0#G "$Link" | grep http://download | cut -d '"' -f 2`
+curl -0L# "$Get" -o "/sdcard/Tool-Tool/.tmp/YouTube.apk"
+mount -o rw,remount / 2> /dev/null
+mount -o rw,remount /system 2> /dev/null
+mkdir -p /system/priv-app/YouTube
+cp -af /storage/emulated/0/Tool-Tool/.tmp/YouTube.apk /system/priv-app/YouTube
+chmod -R 755 /system/priv-app/YouTube
+mount -o ro,remount /system 2> /dev/null
+mount -o ro,remount / 2> /dev/null
+echo "\a
+ Cài đặt thành công.
+ 
+ 
+ Nhập bất kỳ để trở về."
+back return
+else
+back return
+fi
 elif [ "$tck" == "1" ];then
 
 
