@@ -5,21 +5,26 @@ echo "
 \e[0;1mKiểm tra cập nhật...
 "
 kiemtra=`curl -0# https://raw.githubusercontent.com/kakathic/tool-tool/master/README.md | egrep "Version="`
-if [ "$kiemtra" == "Version=1.4" ];then
+if [ "$kiemtra" == "Version=1.5" ];then
 echo "
 Mới nhất
  "
-else
+elif [ $kiemtra ];then
 # kakathic - Tool Mod - Hiếu Tools
 curl -0# https://raw.githubusercontent.com/kakathic/tool-tool/master/File/Tool-Tool.sh -o /sdcard/MIUI/Tool-Tool
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
 mv -f /sdcard/MIUI/Tool-Tool /bin/Tool-Tool
 chmod -R 777 /bin/Tool-Tool
+rm -fr /data/local/Tool-Apk
+rm -fr /storage/emulated/0/Tool-Tool/.tmp
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 su -c "Tool-Tool"
+else
+echo 'Không có mạng'
 fi
+if [ $kiemtra ];then
 if [ -e /bin/Tool-Chmod ];then
 echo
 else
@@ -43,7 +48,7 @@ rm -fr /sdcard/TT3
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 fi
-
+fi
 
 Tool ()
 {
@@ -74,7 +79,7 @@ echo -e "
  
  (\e[0m\e[33;1m9\e[0;1;2m) Dọn dẹp (\e[0m\e[33;1m10\e[0;1;2m) Đăng nhập Tài khoản 
  
- (\e[0m\e[33;1m11\e[0;1;2m) Reboot máy (\e[0m\e[33;1m12\e[0;1;2m) Thoát Tool-Tool"
+ (\e[0m\e[33;1m11\e[0;1;2m) Power và Reset (\e[0m\e[33;1m12\e[0;1;2m) Thoát Tool-Tool"
 echo -e "\e[0m"
 echo -e "\e[32;1m Phát triển bởi kakathic - Chúc các bạn vui vẻ"
 close ()
@@ -1237,30 +1242,27 @@ fi
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
 # Tải Apktool
-if [ -e /sdcard/Tool-Tool/.tmp/Apktool ];then
+if [ -e /data/local/Tool-Apk ];then
 echo
 else
 echo
 echo "> Tải dữ liệu có thể mất đến vài phút..."
 echo
-Link='http://www.mediafire.com/file/lycmt3rgxrnfyzo/Apktool.7z/file'
+Link='http://www.mediafire.com/file/crrruqf3az51ctt/Apktool/file'
 Get=`curl -0#G "$Link" | grep http://download | cut -d '"' -f 2`
 curl -0L# "$Get" -o "/sdcard/Tool-Tool/.tmp/Apktool"
 fi
 
 
-
+AT='/data/local/Tool-Apk/apktool/dex2jar/apktool5.sh'
 # Giải nén Apktool và Cấp quyền hoạt động
-if [ -e /bin/apktool ];then
+if [ -e /data/local/Tool-Apk ];then
 echo
 else
 cd /sdcard/Tool-Tool/.tmp
 7za x -y /sdcard/Tool-Tool/.tmp/Apktool
 cp -rf data/* /data
-cp -rf system/bin/* /bin
 rm -fr data
-rm -fr system
-chmod -R 777 /bin/apktool
 chmod -R 777 /data/data/per.pqy.openjdk
 chmod -R 777 /data/local/Tool-Apk
 fi
@@ -1274,29 +1276,13 @@ fi
 if [ -e /data/local/Tool-Apk/16.apk ];then
 echo
 else
-apktool if /system/app/miui/miui.apk
-apktool if /system/app/miuisystem/miuisystem.apk
-apktool if /system/framework/framework-res.apk
-apktool if /system/framework/framework-ext-res/framework-ext-res.apk
+$AT if /system/app/miui/miui.apk
+$AT if /system/app/miuisystem/miuisystem.apk
+$AT if /system/framework/framework-res.apk
+$AT if /system/framework/framework-ext-res/framework-ext-res.apk
 fi
 
 
-if [ -e /bin/apktool ];then
-sleep 1
-else
-echo -n "
- Lỗi thiếu file vui lòng vào dọn dẹp
- 
- chọn dọn dẹp .tmp và chạy lại
-
- phần này để tiếp tục.
- 
- 
- Chat bất kỳ để trở về."
- 
-read
-Tool return
-fi
 
 # Mount ro
 mount -o ro,remount /system 2> /dev/null
@@ -1314,13 +1300,19 @@ echo
 echo -n " Vui lòng chọn các bước sau đây:
  
  
- 1) Apktool decompile
+ 1) Apktool Decompile
  
- 2) Apktool recompile
+ 2) Apktool Recompile
 
- 3) Import framework
+ 3) Import Framework
  
- 4) Trở lại Menu chính
+ 4) Khởi động lại SystemUi
+ 
+ 5) Khởi động lại Settings
+ 
+ 6) Khởi động lại Miui Home
+ 
+ 7) Trở lại Menu chính
  
  
  Nhập: "
@@ -1355,16 +1347,20 @@ echo -n " Chọn cách decompile apk
 
  1) Decompile res
 
- 2) Decompile All
+ 2) Decompile dex
+
+ 3) Decompile All
  
  
  Nhập: "
  read apbb
  echo
 if [ "$apbb" == "1" ];then
-su -c "apktool d -sf $apkd"
+$AT d -s -f -m "$apkd"
+elif [ "$apbb" == "2" ];then
+$AT d -r -f -m "$apkd"
 else
-su -c "apktool d -f $apkd"
+$AT d -f -m "$apkd"
 fi
 echo
 echo -n " Được lưu ở: "
@@ -1413,7 +1409,7 @@ echo -n " Nhập tên Apk
 apkd2=/sdcard/Tool-Tool/Apk-d/$apkd
 echo
 cd /sdcard/Tool-Tool/Apk-b
-su -c "apktool b -f $apkd2 -o $tenapk.apk"
+$AT b -f -c "$apkd2" -o "$tenapk.apk"
 echo
 echo "\c Bạn có muốn Sign Apk không ?
  
@@ -1454,7 +1450,7 @@ clear
 echo
 echo -e "\e[32;1m Import framework \e[0;1m"
 echo 
-echo -n " Nhập đường dẫn tới apk mún thêm.
+echo -n " Nhập đường dẫn tới apk muốn thêm.
 
  ví dụ: /system/app/miui/miui.apk
  
@@ -1467,7 +1463,7 @@ if [ "$importf" == "0" ];then
 apktool return
 else
 echo
-su -c "apktool if $importf"
+su -c "$AT if $importf"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1475,6 +1471,36 @@ read
 apktool return
 fi
 elif [ "$apk2" == "4" ];then
+echo "\a
+ Reset Systemui..."
+killall com.android.systemui
+echo -n "
+ Xong.
+
+ Nhập bất kỳ để trở về."
+read
+Tool return
+elif [ "$apk2" == "5" ];then
+echo "\a
+ Reset System..."
+killall com.android.settings
+echo -n "
+ Xong.
+
+ Nhập bất kỳ để trở về."
+read
+Tool return
+elif [ "$apk2" == "6" ];then
+echo "\a
+ Reset Miui Home..."
+killall com.miui.home
+echo -n "
+ Xong.
+
+ Nhập bất kỳ để trở về."
+read
+Tool return
+elif [ "$apk2" == "7" ];then
 clear
 Tool return
 else
@@ -1773,27 +1799,25 @@ echo -n "
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
 # Tải Apktool
-if [ -e /sdcard/Tool-Tool/.tmp/Apktool ];then
+if [ -e /data/local/Tool-Apk ];then
 echo
 else
 echo
 echo "> Tải dữ liệu có thể mất đến vài phút..."
 echo
-Link='http://www.mediafire.com/file/lycmt3rgxrnfyzo/Apktool.7z/file'
+Link='http://www.mediafire.com/file/crrruqf3az51ctt/Apktool/file'
 Get=`curl -#G "$Link" | grep http://download | cut -d '"' -f 2`
 curl -L# "$Get" -o "/sdcard/Tool-Tool/.tmp/Apktool"
 fi
 # Giải nén Apktool và Cấp quyền hoạt động
-if [ -e /bin/apktool ];then
+at='/data/local/Tool-Apk/apktool/dex2jar/apktool5.sh'
+if [ -e /data/local/Tool-Apk ];then
 echo
 else
 cd /sdcard/Tool-Tool/.tmp
 7za x -y /sdcard/Tool-Tool/.tmp/Apktool
 cp -rf data/* /data
-cp -rf system/bin/* /bin
 rm -fr data
-rm -fr system
-chmod -R 777 /bin/apktool
 chmod -R 777 /data/data/per.pqy.openjdk
 chmod -R 777 /data/local/Tool-Apk
 fi
@@ -1807,32 +1831,12 @@ fi
 if [ -e /data/local/Tool-Apk/16.apk ];then
 echo
 else
-apktool if /system/app/miui/miui.apk
-apktool if /system/app/miuisystem/miuisystem.apk
-apktool if /system/framework/framework-res.apk
-apktool if /system/framework/framework-ext-res/framework-ext-res.apk
+$at if /system/app/miui/miui.apk
+$at if /system/app/miuisystem/miuisystem.apk
+$at if /system/framework/framework-res.apk
+$at if /system/framework/framework-ext-res/framework-ext-res.apk
 fi
 # Mount ro
-
-
-
-if [ -e /bin/apktool ];then
-sleep 1
-else
-echo -n "
- Lỗi thiếu file vui lòng vào dọn dẹp
- 
- chọn dọn dẹp .tmp và chạy lại
-
- phần này để tiếp tục.
- 
- 
- Chat bất kỳ để trở về."
- 
-read
-back return
-fi
-
 
 cp -rf /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk /sdcard/Tool-Tool/Apk-d
 mv -f /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk.bak
@@ -1847,7 +1851,7 @@ cp -rf /sdcard/Tool-Tool/Apk-d/Apk/META-INF /sdcard/Tool-Tool/Apk-b
 cp -rf /sdcard/Tool-Tool/Apk-d/Apk/AndroidManifest.xml /sdcard/Tool-Tool/Apk-b
 rm -fr /sdcard/Tool-Tool/Apk-d/Apk
 
-apktool d -f /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk
+$at d -r -f -m /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk
 
 
 Vb=`grep -h "iget v0, p0, Landroid/content/pm/ApplicationInfo;->flags:I" /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller/smali/com/android/packageinstaller/*.smali`
@@ -1865,12 +1869,8 @@ sed -i -e "s|$Vb|$Vb2|g" $Ten
 
 
 cd /sdcard/Tool-Tool/Apk-b
-apktool b -f /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller -o MiuiPackageInstaller.apk
+$at b -f -c /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller -o MiuiPackageInstaller.apk
 
-zip -m -0 MiuiPackageInstaller.apk AndroidManifest.xml
-zip -m -0 MiuiPackageInstaller.apk META-INF/*
-
-rm -fr META-INF
 cp -rf /sdcard/Tool-Tool/Apk-b/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller
 chmod -R 755 /system/priv-app/MiuiPackageInstaller
 
@@ -2019,7 +2019,6 @@ xomk return
 elif [ "$Xox" == "2" ];then
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
-rm -fr /bin/apktool
 rm -fr /bin/Tool-Tool
 rm -fr /bin/Tool-Chmod
 rm -fr /sdcard/Tool-Tool
@@ -2058,6 +2057,8 @@ echo "\e[0;7m7"
 echo "\e[0;8m8"
 echo "\e[0;9m9"
 }
+
+
 echo "\e[32;1m
 
  Chào bạn đến với khu vực đăng nhập\e[0;1m
@@ -2075,20 +2076,16 @@ echo -n " Vui lòng điền TK và MK.
  if [ "$TK" == "0" ];then
  Tool return
  fi
+HH=`curl -#G https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/$TK`
+ clear 
  echo -n "\e[0;1m
  MK: \e[0;8;7;m"
  read MK
  echo "\e[0;1m"
- if [ "$TK" == "kakathic" ];then
+
 echo "\e[36;1m
  Xin chào $TK \e[0;1m"
- else
- echo -n "\a
- Sai Tài khoản\a"
- sleep 2
- qq return
- fi
- if [ "$MK" == "1" ];then
+ if [ "$MK" == "$HH" ];then
 gdy ()
 {
 echo
@@ -2105,7 +2102,7 @@ echo -n "
  read Vip
  echo
  if [ "$Vip" == "1" ];then
-Link="https://drive.google.com/file/d/1-OlQEZqqM_3ck-02HvqXiWyT4XcGWqPe/view?usp=drivesdk"
+Link='https://drive.google.com/file/d/10FZ8KIiYII5oACOJomaSQzjRxItZtNSA/view?usp=drivesdk'
 Get=`echo $Link | cut -d '/' -f 6`
 echo -n " "
 curl -L# 'https://drive.google.com/uc?authuser=0&id='$Get'&export=download' -o /sdcard/kaka
@@ -2114,7 +2111,7 @@ cp -rf /sdcard/Tool-Tool/.tmp/sdcard/.1ka /sdcard
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
 cp -rf /sdcard/Tool-Tool/.tmp/system/* /system
-Tool-Chmod
+su -c "Tool-Chmod"
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 rm -fr /sdcard/Tool-Tool/.tmp/sdcard
@@ -2145,9 +2142,49 @@ echo -n "
  }
  qq return
 elif [ "$kk" == "11" ];then
+rbtt ()
+{
 clear
-echo -n " Reboot sau 5 giây";sleep 1;echo -n '.';sleep 1;echo -n '.';sleep 1;echo -n '.';sleep 1;echo -n '.';sleep 1;echo -n '.';sleep 1;echo -n '.';
+echo -n "\e[32;1m Menu Nguồn Và Reset App
+\e[0;1m
+
+ 1) Khởi động lại
+ 
+ 2) Tắt nguồn
+ 
+ 3) Chế độ Fast Boot
+
+ 4) Chế độ Recovery
+ 
+ 5) Trở lại
+ 
+ 
+ Nhập: "
+ read Kbg
+echo
+echo
+clear
+if [ "$Kbg" == "1" ];then
+echo -n " Khởi động lại sau 5 giây";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;
 su -c "reboot"
+elif [ "$Kbg" == "2" ];then
+echo -n " Tắt nguồn sau 5 giây";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;
+su -c "reboot -p shutdown"
+elif [ "$Kbg" == "3" ];then
+echo -n " Vào chế độ Fast Boot sau 5 giây";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;
+su -c "reboot bootloader"
+elif [ "$Kbg" == "4" ];then
+echo -n " Vào chế độ khôi phục sau 5 giây";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;echo -n "\a.";sleep 1;
+su -c "reboot recovery"
+elif [ "$Kbg" == "5" ];then
+Tool return
+else
+echo -n "\a Nhập sai vui lòng nhập lại\a"
+sleep 2
+rbtt return
+fi
+}
+rbtt return
 elif [ "$kk" == "12" ];then
 clear
 exit
