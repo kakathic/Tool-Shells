@@ -2126,7 +2126,7 @@ HH=`curl -#G https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/$T
  echo "\e[0;1m"
 
 echo "\e[36;1m
- Xin chào $TK $HH\e[0;1m"
+ Xin chào $TK\e[0;1m"
  if [ "$MK" == "$HH" ];then
 gdy ()
 {
@@ -2144,7 +2144,7 @@ echo -n "
  read Vip
  echo
  if [ "$Vip" == "1" ];then
-Link='https://drive.google.com/file/d/10FZ8KIiYII5oACOJomaSQzjRxItZtNSA/view?usp=drivesdk'
+Link='https://drive.google.com/file/d/10wAz8Rl6w1aVL_j1FLWGXydff5ti6L6w/view?usp=drivesdk'
 Get=`echo $Link | cut -d '/' -f 6`
 echo -n " "
 curl -L# 'https://drive.google.com/uc?authuser=0&id='$Get'&export=download' -o /sdcard/kaka
