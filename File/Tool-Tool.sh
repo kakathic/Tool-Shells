@@ -17,7 +17,7 @@ mount -o rw,remount /system 2> /dev/null
 mv -f /sdcard/MIUI/Tool-Tool /bin/Tool-Tool
 chmod -R 777 /bin/Tool-Tool
 rm -fr /data/local/Tool-Apk
-rm -fr /storage/emulated/0/Tool-Tool/.tmp
+rm -fr /storage/emulated/0/Tool-Tool/.tmp/*
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 su -c "Tool-Tool"
@@ -1547,7 +1547,9 @@ if [ "$tck" == "0" ];then
 Tool return
 elif [ "$tck" == "5" ];then
 clear
-echo -n "\e[32;1m Cài đặt YouTube Root
+echo -n "\e[32;1m
+
+ Cài đặt YouTube Root\e[0;1m
 
 
  1) Tiếp tục
@@ -1559,9 +1561,14 @@ echo -n "\e[32;1m Cài đặt YouTube Root
 read yt
 echo
 if [ "$yt" == "1" ];then
-Link='http://www.mediafire.com/file/tjn9dhxf4mdwsl4/YouTube-Root.apk/file'
+if [ -e /sdcard/Tool-Tool/.tmp/YouTube.apk ];then
+echo
+else
+Link='http://www.mediafire.com/file/5fwv5pcp1vd4el1/YouTube-Root.apk/file'
 Get=`curl -0#G "$Link" | grep http://download | cut -d '"' -f 2`
 curl -0L# "$Get" -o "/sdcard/Tool-Tool/.tmp/YouTube.apk"
+fi
+
 mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
 mkdir -p /system/priv-app/YouTube
@@ -1570,7 +1577,7 @@ chmod -R 755 /system/priv-app/YouTube
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo "\a
- Cài đặt thành công.
+ Cài đặt thành công khởi động lại để hiện YouTube.
  
  
  Nhập bất kỳ để trở về."
@@ -2119,7 +2126,7 @@ HH=`curl -#G https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/$T
  echo "\e[0;1m"
 
 echo "\e[36;1m
- Xin chào $TK \e[0;1m"
+ Xin chào $TK $HH\e[0;1m"
  if [ "$MK" == "$HH" ];then
 gdy ()
 {
