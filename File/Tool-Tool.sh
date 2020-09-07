@@ -17,6 +17,7 @@ mount -o rw,remount /system 2> /dev/null
 mv -f /sdcard/MIUI/Tool-Tool /bin/Tool-Tool
 chmod -R 777 /bin/Tool-Tool
 rm -fr /data/local/Tool-Apk
+rm -fr /bin/Tool-Chmod
 rm -fr /storage/emulated/0/Tool-Tool/.tmp/*
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
@@ -1217,7 +1218,7 @@ elif [ "$kk" == "7" ];then
 if [ -e /data/local/Tool-Apk ];then
 echo
 else
-echo -n " Tải dữ liệu Apktool X
+echo -n "\e[0;1m Tải dữ liệu Apktool X
 
 
  Nó sẽ tải 1 lượng dữ liệu lớn khoảng 50MB
@@ -1340,14 +1341,14 @@ echo -n " Vui lòng nhập đường dẫn đến file apk
 if [ "$apkd" == "0" ];then
 apktool return
 else
-cd /sdcard/Tool-Tool/Apk-d
+cd /sdcard/Tool-Tool/Apk-decom
 echo
 echo -n " Chọn cách decompile apk
 
 
- 1) Decompile res
+ 1) Decompile Res
 
- 2) Decompile dex
+ 2) Decompile Dex
 
  3) Decompile All
  
@@ -1364,7 +1365,7 @@ $AT d -f -m "$apkd"
 fi
 echo
 echo -n " Được lưu ở: "
-echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-d \e[0;1m"
+echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-decom \e[0;1m"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1384,7 +1385,7 @@ echo " Vui lòng nhập tên thư mục vừa bung
  Thư mục có sẵn:"
 echo
 echo -e "\e[31;1m"
-cd /sdcard/Tool-Tool/Apk-d
+cd /sdcard/Tool-Tool/Apk-decom
 echo -n " "
 ls -p
 echo -e "\e[0;1m"
@@ -1398,18 +1399,11 @@ if [ "$apkd" == "0" ];then
 apktool return
 else
 echo
-echo -n " Nhập tên Apk
- 
- ví dụ: Miuihome
- 
- 
- Nhập: "
- 
- read tenapk
-apkd2=/sdcard/Tool-Tool/Apk-d/$apkd
+apkd2=/sdcard/Tool-Tool/Apk-decom/$apkd
 echo
-cd /sdcard/Tool-Tool/Apk-b
-$AT b -f -c "$apkd2" -o "$tenapk.apk"
+Tenapk=`cat "$apkd2 | grep 'apkFileName:' | sed 's|apkFileName: ||g;s|.apk||g'`
+cd /sdcard/Tool-Tool/Apk-build
+$AT b -f -c "$apkd2" -o "$Tenapk_${RANDOM}.apk"
 echo
 echo "\c Bạn có muốn Sign Apk không ?
  
@@ -1423,11 +1417,11 @@ echo "\c Bạn có muốn Sign Apk không ?
  read signd
 echo
 if [ "$signd" == "1" ];then
-sh /data/local/Tool-Apk/apktool/dex2jar/d2j-apk-sign.sh -f /sdcard/Tool-Tool/Apk-b/$tenapk.apk -o /sdcard/Tool-Tool/Apk-b/$tenapk.sign.apk
+sh /data/local/Tool-Apk/apktool/dex2jar/d2j-apk-sign.sh -f /sdcard/Tool-Tool/Apk-build/$tenapk.apk -o /sdcard/Tool-Tool/Apk-build/$tenapk.sign.apk
 echo
 echo
 echo -n " Được lưu ở "
-echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-b/$tenapk.sign.apk \e[0;1m"
+echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk_${RANDOM}.sign.apk \e[0;1m"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1436,7 +1430,7 @@ apktool return
 else
 echo
 echo -n " Được lưu ở "
-echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-b/$tenapk.apk \e[0;1m"
+echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk_${RANDOM}.apk \e[0;1m"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1880,25 +1874,25 @@ $at if /system/framework/framework-ext-res/framework-ext-res.apk
 fi
 # Mount ro
 
-cp -rf /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk /sdcard/Tool-Tool/Apk-d
-mv -f /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk.bak
-cp -rf /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk /sdcard/Tool-Tool/Apk-d
+cp -rf /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk /sdcard/Tool-Tool/Apk-decom
+mv -f /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk.bak
+cp -rf /system/priv-app/MiuiPackageInstaller/MiuiPackageInstaller.apk /sdcard/Tool-Tool/Apk-decom
 
-mkdir -p /sdcard/Tool-Tool/Apk-d/Apk
-cd /sdcard/Tool-Tool/Apk-d
+mkdir -p /sdcard/Tool-Tool/Apk-decom/Apk
+cd /sdcard/Tool-Tool/Apk-decom
 
-unzip -oq MiuiPackageInstaller.apk -d /sdcard/Tool-Tool/Apk-d/Apk
+unzip -oq MiuiPackageInstaller.apk -d /sdcard/Tool-Tool/Apk-decom/Apk
 
-cp -rf /sdcard/Tool-Tool/Apk-d/Apk/META-INF /sdcard/Tool-Tool/Apk-b
-cp -rf /sdcard/Tool-Tool/Apk-d/Apk/AndroidManifest.xml /sdcard/Tool-Tool/Apk-b
-rm -fr /sdcard/Tool-Tool/Apk-d/Apk
+cp -rf /sdcard/Tool-Tool/Apk-decom/Apk/META-INF /sdcard/Tool-Tool/Apk-build
+cp -rf /sdcard/Tool-Tool/Apk-decom/Apk/AndroidManifest.xml /sdcard/Tool-Tool/Apk-build
+rm -fr /sdcard/Tool-Tool/Apk-decom/Apk
 
-$at d -r -f -m /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk
+$at d -r -f -m /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk
 
 
-Vb=`grep -h "iget v0, p0, Landroid/content/pm/ApplicationInfo;->flags:I" /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller/smali/com/android/packageinstaller/*.smali`
+Vb=`grep -h "iget v0, p0, Landroid/content/pm/ApplicationInfo;->flags:I" /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller/smali/com/android/packageinstaller/*.smali`
 
-Ten=`grep -lrw "iget v0, p0, Landroid/content/pm/ApplicationInfo;->flags:I" /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller/smali/com/android/packageinstaller/*.smali`
+Ten=`grep -lrw "iget v0, p0, Landroid/content/pm/ApplicationInfo;->flags:I" /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller/smali/com/android/packageinstaller/*.smali`
 
 Vb2="    const/4 v0, 0x0
 
@@ -1910,16 +1904,16 @@ sed -i -e "s|$Vb|$Vb2|g" $Ten
 
 
 
-cd /sdcard/Tool-Tool/Apk-b
-$at b -f -c /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller -o MiuiPackageInstaller.apk
+cd /sdcard/Tool-Tool/Apk-build
+$at b -f -c /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller -o MiuiPackageInstaller.apk
 
-cp -rf /sdcard/Tool-Tool/Apk-b/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller
+cp -rf /sdcard/Tool-Tool/Apk-build/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller
 chmod -R 755 /system/priv-app/MiuiPackageInstaller
 
 mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
-rm -fr /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller
-rm -fr /sdcard/Tool-Tool/Apk-b/MiuiPackageInstaller.apk
+rm -fr /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller
+rm -fr /sdcard/Tool-Tool/Apk-build/MiuiPackageInstaller.apk
 
 killall com.miui.packageinstaller
 
@@ -1958,12 +1952,12 @@ echo -n " Hãy tạm dừng ở bước này, bạn lên tải 1 apk
  if [ "$odk" == "1" ];then
  mount -o rw,remount / 2> /dev/null
 mount -o rw,remount /system 2> /dev/null
- cp -rf /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller
- rm -fr /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk
+ cp -rf /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller
+ rm -fr /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk
  mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
  else
- rm -fr /sdcard/Tool-Tool/Apk-d/MiuiPackageInstaller.apk
+ rm -fr /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk
  fi
  back return
  elif [ "$tck" == "4" ];then
