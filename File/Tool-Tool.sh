@@ -65,10 +65,9 @@ echo -e "\e[32;1m
   
   
   "
-echo -e "\e[31;1m Nhập số tương ứng với các hành động bên dưới \e[0m
-
+echo -e "\e[32;1m Menu Chính \e[0;1m
 "
-echo -e "\e[32;1m Menu Chính: \e[0;1;2m"
+echo -e "\e[31;1m Nhập số tương ứng với các hành động bên dưới \e[0;1;2m"
 echo -e "
  (\e[0m\e[33;1m1\e[0;1;2m) Cài đặt Tool Mod (\e[0m\e[33;1m2\e[0;1;2m) Mod Theme Mtz
  
@@ -1249,9 +1248,8 @@ else
 echo
 echo "> Tải dữ liệu có thể mất đến vài phút..."
 echo
-Link='http://www.mediafire.com/file/crrruqf3az51ctt/Apktool/file'
-Get=`curl -0#G "$Link" | grep http://download | cut -d '"' -f 2`
-curl -0L# "$Get" -o "/sdcard/Tool-Tool/.tmp/Apktool"
+Link='https://srv-file9.gofile.io/download/K70UkJ/Apktool.zip'
+curl -0L# "$Link" -o "/sdcard/Tool-Tool/.tmp/Apktool"
 fi
 
 
@@ -1399,11 +1397,12 @@ if [ "$apkd" == "0" ];then
 apktool return
 else
 echo
-apkd2=/sdcard/Tool-Tool/Apk-decom/$apkd
+apkd2="/sdcard/Tool-Tool/Apk-decom/$apkd"
 echo
-Tenapk=`cat "$apkd2 | grep 'apkFileName:' | sed 's|apkFileName: ||g;s|.apk||g'`
+Tenapk=`cat "$apkd2/apktool.yml" | grep 'apkFileName:' | sed 's|apkFileName: ||g;s|.apk||g'`
+So="${RANDOM}"
 cd /sdcard/Tool-Tool/Apk-build
-$AT b -f -c "$apkd2" -o "$Tenapk_${RANDOM}.apk"
+$AT b -f -c "$apkd2" -o "$Tenapk~$So.apk"
 echo
 echo "\c Bạn có muốn Sign Apk không ?
  
@@ -1421,7 +1420,7 @@ sh /data/local/Tool-Apk/apktool/dex2jar/d2j-apk-sign.sh -f /sdcard/Tool-Tool/Apk
 echo
 echo
 echo -n " Được lưu ở "
-echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk_${RANDOM}.sign.apk \e[0;1m"
+echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk~$So.sign.apk \e[0;1m"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1430,7 +1429,7 @@ apktool return
 else
 echo
 echo -n " Được lưu ở "
-echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk_${RANDOM}.apk \e[0;1m"
+echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk~$So.apk \e[0;1m"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1841,9 +1840,8 @@ else
 echo
 echo "> Tải dữ liệu có thể mất đến vài phút..."
 echo
-Link='http://www.mediafire.com/file/crrruqf3az51ctt/Apktool/file'
-Get=`curl -#G "$Link" | grep http://download | cut -d '"' -f 2`
-curl -L# "$Get" -o "/sdcard/Tool-Tool/.tmp/Apktool"
+Link='https://srv-file9.gofile.io/download/K70UkJ/Apktool.zip'
+curl -0L# "$Link" -o "/sdcard/Tool-Tool/.tmp/Apktool"
 fi
 # Giải nén Apktool và Cấp quyền hoạt động
 at='/data/local/Tool-Apk/apktool/dex2jar/apktool5.sh'
