@@ -13,13 +13,11 @@ elif [ $kiemtra ];then
 # kakathic - Tool Mod - Hiếu Tools
 curl -0# https://raw.githubusercontent.com/kakathic/tool-tool/master/File/Tool-Tool.sh -o /sdcard/MIUI/Tool-Tool
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mv -f /sdcard/MIUI/Tool-Tool /bin/Tool-Tool
 chmod -R 777 /bin/Tool-Tool
 rm -fr /data/local/Tool-Apk
 rm -fr /bin/Tool-Chmod
 rm -fr /storage/emulated/0/Tool-Tool/.tmp/*
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 su -c "Tool-Tool"
 else
@@ -31,7 +29,6 @@ echo
 else
 curl -0# https://raw.githubusercontent.com/kakathic/Tool-Tool/master/File/Tool-Tool.txt -o /sdcard/TT2
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 tar -jxf /sdcard/TT2 -C /
 rm -fr /sdcard/TT2
 chmod -R 777 /bin/7za
@@ -46,7 +43,6 @@ chmod -R 777 /bin/zipsigner
 chmod -R 777 /bin/zipalign
 rm -fr /sdcard/Tool-Tool/.tmp/zip
 rm -fr /sdcard/TT3
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 fi
 fi
@@ -152,7 +148,6 @@ echo
 echo " Tiến hành cài đặt..."
 echo
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 rm -fr /system/media/theme/default
 rm -fr /system/etc/precust_theme
 rm -fr /system/media/theme/miui_mod_icons
@@ -163,7 +158,6 @@ rm -fr /data/system/theme/*
 cp -rf /storage/emulated/0/Tool-Tool/.tmp/sdcard/* /sdcard
 cp -rf /storage/emulated/0/Tool-Tool/.tmp/system/* /system
 su -c "Tool-Chmod"
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 rm -fr /storage/emulated/0/Tool-Tool/.tmp/sdcard
 rm -fr /storage/emulated/0/Tool-Tool/.tmp/system
@@ -527,12 +521,10 @@ echo
 echo
 echo -n " Đang tiến hành sao chép";sleep 1;echo -n ".";sleep 1;echo -n ".";sleep 1;echo -n ".";
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mount -o rw,remount /vendor 2> /dev/null
 cp -rf /sdcard/Tool-Tool/system/* /system
 su -c "Tool-Chmod"
 mount -o ro,remount /vendor 2> /dev/null
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo -n "\a - Xong.
 
@@ -604,7 +596,6 @@ clear
 echo -n "
  Đang tiến hành dọn dẹp app.";sleep 1;echo -n ".";sleep 1;echo -n ".";sleep 1;echo -n ".";
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mount -o rw,remount /cust 2> /dev/null
 rm -fr /system/priv-app/MiBrowser
 rm -fr /system/app/PaymentService
@@ -625,7 +616,6 @@ pm disable com.mi.health
 pm disable com.android.email
 pm disable com.android.browser
 mount -o ro,remount /cust 2> /dev/null
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo -n "\a
 
@@ -656,13 +646,11 @@ if [ "$xoa2" == "0" ];then
 adxoa return
 else
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mount -o rw,remount /vendor 2> /dev/null
 mount -o rw,remount /cust 2> /dev/null
 rm -fr $xoa2
 mount -o ro,remount /cust 2> /dev/null
 mount -o ro,remount /vendor 2> /dev/null
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo -n "\a
  Xong.
@@ -715,11 +703,9 @@ Tool return
 elif [ "$lmtc" == "2" ];then
 if [ -e "/system/media/theme/default/$Ten.bak" ];then
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 rm -fr "/system/media/theme/default/$Ten"
 mv "/system/media/theme/default/$Ten.bak" "/system/media/theme/default/$Ten"
 chmod -R 755 "/system/media/theme/default/$Ten"
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 killall "$Ten"
 else
@@ -733,7 +719,6 @@ read
 home return
 elif [ "$lmtc" == "1" ];then
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mkdir -p /storage/emulated/0/Tool-Tool/.tmp/tmp
 if [ -e "/system/media/theme/default/$Ten" ];then
 unzip -oq "/system/media/theme/default/$Ten" -d /storage/emulated/0/Tool-Tool/.tmp/tmp
@@ -981,7 +966,6 @@ mv -f "$Ten" "/system/media/theme/default/$Ten"
 chmod -R 755 "/system/media/theme/default/$Ten"
 rm -fr /storage/emulated/0/Tool-Tool/.tmp/tmp
 
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 
 killall "$Ten"
@@ -1033,11 +1017,9 @@ Tool return
 elif [ "$lmtc" == "2" ];then
 if [ -e "/system/media/theme/default/$Ten.bak" ];then
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 rm -fr "/system/media/theme/default/$Ten"
 mv "/system/media/theme/default/$Ten.bak" "/system/media/theme/default/$Ten"
 chmod -R 755 "/system/media/theme/default/$Ten"
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 killall "$Ten"
 else
@@ -1051,7 +1033,6 @@ read
 home return
 elif [ "$lmtc" == "1" ];then
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mkdir -p /storage/emulated/0/Tool-Tool/.tmp/tmp
 if [ -e "/system/media/theme/default/$Ten" ];then
 unzip -oq "/system/media/theme/default/$Ten" -d /storage/emulated/0/Tool-Tool/.tmp/tmp
@@ -1191,7 +1172,6 @@ mv -f "$Ten" "/system/media/theme/default/$Ten"
 chmod -R 755 "/system/media/theme/default/$Ten"
 rm -fr /storage/emulated/0/Tool-Tool/.tmp/tmp
 
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 
 killall "$Ten"
@@ -1240,7 +1220,6 @@ Tool return
 fi
 fi
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 # Tải Apktool
 if [ -e /data/local/Tool-Apk ];then
 echo
@@ -1284,7 +1263,6 @@ fi
 
 
 # Mount ro
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo
 apktool ()
@@ -1400,9 +1378,9 @@ echo
 apkd2="/sdcard/Tool-Tool/Apk-decom/$apkd"
 echo
 Tenapk=`cat "$apkd2/apktool.yml" | grep 'apkFileName:' | sed 's|apkFileName: ||g;s|.apk||g'`
-So="${RANDOM}"
+
 cd /sdcard/Tool-Tool/Apk-build
-$AT b -f -c "$apkd2" -o "$Tenapk~$So.apk"
+$AT b -f -c "$apkd2" -o "$Tenapk.apk"
 echo
 echo "\c Bạn có muốn Sign Apk không ?
  
@@ -1420,7 +1398,7 @@ sh /data/local/Tool-Apk/apktool/dex2jar/d2j-apk-sign.sh -f /sdcard/Tool-Tool/Apk
 echo
 echo
 echo -n " Được lưu ở "
-echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk~$So.sign.apk \e[0;1m"
+echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk.sign.apk \e[0;1m"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1429,7 +1407,7 @@ apktool return
 else
 echo
 echo -n " Được lưu ở "
-echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk~$So.apk \e[0;1m"
+echo -e "\e[33;1m/sdcard/Tool-Tool/Apk-build/$Tenapk.apk \e[0;1m"
 echo
 echo
 echo -n " Chat phím bất kỳ để trở lại."
@@ -1557,17 +1535,14 @@ if [ "$yt" == "1" ];then
 if [ -e /sdcard/Tool-Tool/.tmp/YouTube.apk ];then
 echo
 else
-Link='http://www.mediafire.com/file/5fwv5pcp1vd4el1/YouTube-Root.apk/file'
-Get=`curl -0#G "$Link" | grep http://download | cut -d '"' -f 2`
-curl -0L# "$Get" -o "/sdcard/Tool-Tool/.tmp/YouTube.apk"
+Link='https://srv-file7.gofile.io/download/cmQ4Hu/YouTube.apk'
+curl -0L# "$Link" -o "/sdcard/Tool-Tool/.tmp/YouTube.apk"
 fi
 
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mkdir -p /system/priv-app/YouTube
 cp -af /storage/emulated/0/Tool-Tool/.tmp/YouTube.apk /system/priv-app/YouTube
 chmod -R 755 /system/priv-app/YouTube
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo "\a
  Cài đặt thành công khởi động lại để hiện YouTube.
@@ -1763,10 +1738,8 @@ echo -n "
  Nhập: "
  read Test
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 mv -f $Test /system/media/bootanimation.zip
 chmod -R 755 /system/media/bootanimation.zip
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo -n "\a
  Thành công.
@@ -1832,7 +1805,6 @@ echo -n "
  fi
 
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 # Tải Apktool
 if [ -e /data/local/Tool-Apk ];then
 echo
@@ -1908,7 +1880,6 @@ $at b -f -c /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller -o MiuiPackageInsta
 cp -rf /sdcard/Tool-Tool/Apk-build/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller
 chmod -R 755 /system/priv-app/MiuiPackageInstaller
 
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 rm -fr /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller
 rm -fr /sdcard/Tool-Tool/Apk-build/MiuiPackageInstaller.apk
@@ -1949,11 +1920,9 @@ echo -n " Hãy tạm dừng ở bước này, bạn lên tải 1 apk
  read odk
  if [ "$odk" == "1" ];then
  mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
  cp -rf /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk /system/priv-app/MiuiPackageInstaller
  rm -fr /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk
- mount -o ro,remount /system 2> /dev/null
-mount -o ro,remount / 2> /dev/null
+ mount -o ro,remount / 2> /dev/null
  else
  rm -fr /sdcard/Tool-Tool/Apk-decom/MiuiPackageInstaller.apk
  fi
@@ -1986,10 +1955,8 @@ echo -n "
  back return
  fi
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 sed -i.bak -e "s/ro.product.mod_device/#ro.product.mod_device/g" /system/build.prop
 chmod -R 600 /system/build.prop
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo -n "\a
  Xong.
@@ -2052,12 +2019,10 @@ read
 xomk return
 elif [ "$Xox" == "2" ];then
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 rm -fr /bin/Tool-Tool
 rm -fr /bin/Tool-Chmod
 rm -fr /sdcard/Tool-Tool
 rm -fr /data/local/Tool-Apk
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 echo -n "\a - Xong.
 
@@ -2143,10 +2108,8 @@ curl -L# 'https://drive.google.com/uc?authuser=0&id='$Get'&export=download' -o /
 unzip -oq /sdcard/kaka -d /sdcard/Tool-Tool/.tmp
 cp -rf /sdcard/Tool-Tool/.tmp/sdcard/.1ka /sdcard
 mount -o rw,remount / 2> /dev/null
-mount -o rw,remount /system 2> /dev/null
 cp -rf /sdcard/Tool-Tool/.tmp/system/* /system
 su -c "Tool-Chmod"
-mount -o ro,remount /system 2> /dev/null
 mount -o ro,remount / 2> /dev/null
 rm -fr /sdcard/Tool-Tool/.tmp/sdcard
 rm -fr /sdcard/Tool-Tool/.tmp/system
