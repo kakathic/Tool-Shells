@@ -327,18 +327,7 @@ echo -n "
  Nhập: "
  read tencl
 sed -i -e "s/Clock Mod/$tencl/g" /sdcard/MIUI/kakathic/description.xml
-echo -n "
- Vui lòng chọn chiều rộng và dài Clock
- 
- 
- mặc định 4x6 thì điền 4:2
- 
- lớn hơn 6x7 thì điền 6:3
-
-
- Nhập: "
-read sizecl
-sed -i -e "s/4:2/$sizecl/g" /sdcard/MIUI/kakathic/description.xml
+sed -i -e "s/4:2/8:3/g" /sdcard/MIUI/kakathic/description.xml
 echo "
  Đóng gói thành Mtz...
 "
@@ -1362,10 +1351,13 @@ echo " Vui lòng nhập tên thư mục vừa bung
 echo
 echo -e "\e[31;1m"
 cd /sdcard/Tool-Tool/Apk-decom
-echo -n " "
-ls -p
+echo -n '
+ '
+khd=`ls -p1`
+
+echo $khd | sed -z 's|/|\n\n|g'
+
 echo -e "\e[0;1m"
-echo
 echo -n " Nhập 0) Trở lại
  
  
