@@ -23,6 +23,7 @@ Get=`curl -#G "$Link" | grep 'http://download' | cut -d '"' -f 2`
 echo "
 
 Đang tải: $Ten ($Size)
+
 "
 curl -L# "$Get" -o /sdcard/7zvip/Apktool
 cd /sdcard/7zvip
