@@ -2,21 +2,32 @@ if [ -e /data/local/Tool-Apk ];then
 rm -fr /data/local/Tool-Apk
 fi
 
+clear
 echo "\e[0;1m
 
-
 Tải dữ liệu vui lòng chờ...
+
 "
-Get=`curl -#G 'http://www.mediafire.com/file/zsx1mvn7f0l30le/Apktool/file' | grep http://download | cut -d '"' -f 2`
-curl -L# "$Get" -o /sdcard/Apktool998
-mkdir -p /sdcard/19982
-tar -jxf /sdcard/Apktool998 -C /sdcard/19982
-cp -af /sdcard/19982/data/* /data
-curl -L# https://github.com/kakathic/Tool-Tool/raw/master/File/zip.7z -o /sdcard/TT3
-cd /storage/emulated/0/19982
-/data/local/Tool-Apk/apktool/openjdk/bin/7za x -y /sdcard/TT3
-cp -rf /sdcard/19982/zip/* /data/local/Tool-Apk/apktool/openjdk/bin
-rm -fr /sdcard/19982
-rm -fr /sdcard/TT3
-chmod -R 777 /data/data/per.pqy.openjdk
+mkdir -p /sdcard/7zvip
+curl -L# https://github.com/kakathic/Tool-Tool/raw/master/File/7z -o /sdcard/7zvip/7zzzzz
+tar -jxf /sdcard/7zvip/7zzzzz -C /sdcard/7zvip
+cp -rf /sdcard/7zvip/Tool-Apk /data/local
 chmod -R 777 /data/local/Tool-Apk
+Link='http://www.mediafire.com/file/791ogjte4n02bco/Tool-Apk2.7z/file'
+Ten=`curl -#G "$Link" | tac | tac | grep -m 1 'div class="filename' | cut -d '>' -f 2 | cut -d '<' -f 1`
+
+Size=`curl -#G "$Link" | grep 'File size:' | cut -d '>' -f 3 | cut -d '<' -f 1`
+
+Get=`curl -#G "$Link" | grep 'http://download' | cut -d '"' -f 2`
+#clear
+echo "
+
+Đang tải: $Ten ($Size)
+"
+curl -L# "$Get" -o /sdcard/7zvip/Apktool
+cd /sdcard/7zvip
+7za x -y Apktool
+7za x -y Tool-Apk.7z
+cp -rf /sdcard/7zvip/Tool-Apk /data/local
+chmod -R 777 /data/local/Tool-Apk
+rm -fr /sdcard/7zvip
