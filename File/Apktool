@@ -32,3 +32,11 @@ cd /sdcard/7zvip
 cp -rf /sdcard/7zvip/Tool-Apk /data/local
 chmod -R 777 /data/local/Tool-Apk
 rm -fr /sdcard/7zvip
+
+if [ -e /data/data/per.pqy.openjdk ];then
+echo
+else
+cp -rf /data/local/Tool-Apk/per.pqy.openjdk /data/data
+chmod -R 777 /data/data/per.pqy.openjdk
+fi
+
