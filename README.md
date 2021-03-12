@@ -1,5 +1,7 @@
 # Tool Tool
 
+You must have root to use the application
+
 The Tool Tool includes:
 
 Apktool
