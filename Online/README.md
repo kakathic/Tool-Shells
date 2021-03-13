@@ -1,6 +1,6 @@
 ## Update Xml
 
-Version=V1.0
+Version=K1.0
 
 Menu=1.1
 
