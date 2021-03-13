@@ -4,6 +4,13 @@ is in the process of full lunch development.
 
 You must have root to use the application
 
+
+
+
+Official version from K1.1 onwards.
+
+
+
 The Tool Tool includes:
 
 Apktool
