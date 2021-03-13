@@ -2,7 +2,7 @@
 
 Version=K1.1
 
-Menu=1.1
+Menu=1.2
 
 Tooltar=1.3
 
