@@ -1,13 +1,12 @@
 # Tool Tool
 
-
 Is an application to edit the apk.
 
 Support to install apk files, apks, apkm, xapk etc.
 
 Mostly Apktool
 
-Install the latest Java jdk 15
+Install the latest Java JDK 15
 
 There are many tools like
 
@@ -16,6 +15,8 @@ Dex Tool 2.1, Baksmali, Smali, Apksigner
 Java, Javac, Javap
 
 V.v
+
+Download
 
 And the add-ons come in the future.
 
