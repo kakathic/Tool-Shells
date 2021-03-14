@@ -41,7 +41,7 @@ Apktool: https://github.com/iBotPeaches/Apktool
 
 Baksmali: https://github.com/JesusFreke/smali
 
-kr-scripts: https://github.com/helloklf/kr-scripts
+Kr-scripts: https://github.com/helloklf/kr-scripts
 
 Buysbox: https://github.com/Magisk-Modules-Repo/busybox-ndk
 
