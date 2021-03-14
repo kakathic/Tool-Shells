@@ -11,19 +11,9 @@ Install the latest Java jdk 15
 
 There are many tools like
 
-Dex Tool 2.1
+Dex Tool 2.1, Baksmali, Smali, Apksigner
 
-Baksmali
-
-Smali
-
-Apksigner
-
-Java
-
-Javac
-
-Javap
+Java, Javac, Javap
 
 V.v
 
