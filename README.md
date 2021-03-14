@@ -1,39 +1,40 @@
 # Tool Tool
 
-is in the process of full lunch development.
 
-You must have root to use the application
+Is an application to edit the apk.
 
+Support to install apk files, apks, apkm, xapk etc.
 
+Mostly Apktool
 
+Install the latest Java jdk 15
 
-Official version from K1.1 onwards.
+There are many tools like
 
-
-
-The Tool Tool includes:
-
-Apktool
+Dex Tool 2.1
 
 Baksmali
 
 Smali
 
-j2dex
+Apksigner
 
-dx
+Java
 
-Java jdk 15
+Javac
 
-Apksign
+Javap
 
 V.v
 
-Lots of features will be added to the app in the future.
+And the add-ons come in the future.
 
-Hope you guys support and help us develop it.
+Application using source code of Kr-scripts
 
-Thank you.
+It supports xml, linux in the application.
+
+Application is still in development.
+
 
 Use the source code:
 
@@ -56,4 +57,4 @@ Apksigner: https://github.com/fornwall/apksigner
 Zip: https://github.com/Magisk-Modules-Repo/zipsigner
 
 
-.
+Please contribute ideas to develop the application to be perfect.
