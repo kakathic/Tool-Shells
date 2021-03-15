@@ -6,7 +6,7 @@ Support to install apk files, apks, apkm, xapk etc.
 
 #### [Tool-Tool.apk](https://github.com/kakathic/Tool-Tool/releases/download/K1.1/Tool-Tool.apk)
 
-Mostly Apktool:
+The Tool Tool contains commands:
 
 ✓ Java JDK 15
 
@@ -26,7 +26,7 @@ Mostly Apktool:
 
 ✓ 7-zip
 
-V.v
+v.v
 
 
 And the add-ons come in the future.
