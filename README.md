@@ -16,7 +16,7 @@ Java, Javac, Javap
 
 V.v
 
-[Download APK](https://github.com/kakathic/Tool-Tool/releases/download/K1.1/Tool-Tool.apk)
+[Download Tool Tool](https://github.com/kakathic/Tool-Tool/releases/download/K1.1/Tool-Tool.apk)
 
 And the add-ons come in the future.
 
