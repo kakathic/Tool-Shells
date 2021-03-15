@@ -1,41 +1,42 @@
 ## Update Tool Tool
 
+
+
 Version=K1.1
 
-Phiên bản của Apk
+Apk's version
 
 
 
 
 Menu=1.3
 
-Cập nhật các xml tính năng
+Update the feature xml
 
 
 
 
 Tooltar=1.3
 
-Cập nhật các lệnh hệ thống
+Update system commands
 
 
 
 
 JDK=J1.0
 
-Cập nhật JDK Java 15
+Update JDK Java 15
 
 
 
-Notes:
+Notes: 1.4
 
-1.4:
 
-- Tính năng giải mã hàng loạt được thêm vào
+- Batch decoding feature added
 
-- Tính năng giải mã được sửa đổi.
+- Modified decoding feature.
 
-- Thêm tool tiện ích
+- Add utility tool
 
 + Baksmali, Smali
 
@@ -43,7 +44,30 @@ Notes:
 
 + Dex tool
 
-- Thêm ẩn biểu tượng thanh trạng thái.
+- Add hidden status bar icon.
+
+
+Notes: 1.3
+
+
+- Update basic operations
+
+
+Notes: 1.2
+
+- Add installers, force stop, uninstall
+
+Notes: 1.1
+
+- Added restart option
+
+Notes: 1.0
+
+- Add Apktool Feature
+
+- Add updates
+
+
 
 
 
