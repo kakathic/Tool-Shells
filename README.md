@@ -4,19 +4,9 @@ Is an application to edit the apk.
 
 Support to install apk files, apks, apkm, xapk etc.
 
-Mostly Apktool
-
-Install the latest Java JDK 15
-
-There are many tools like
-
-Dex Tool 2.1, Baksmali, Smali, Apksigner
-
-Java, Javac, Javap
-
-V.v
-
 #### [Tool-Tool.apk](https://github.com/kakathic/Tool-Tool/releases/download/K1.1/Tool-Tool.apk)
+
+Mostly Apktool:
 
 ✓ Java JDK 15
 
