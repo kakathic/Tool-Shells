@@ -56,5 +56,6 @@ Apksigner: https://github.com/fornwall/apksigner
 
 Zip: https://github.com/Magisk-Modules-Repo/zipsigner
 
+Dexterous: https://github.com/Project-ARTist/dexterous
 
 Please contribute ideas to develop the application to be perfect.
