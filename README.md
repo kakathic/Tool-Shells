@@ -24,9 +24,7 @@ The Tool Tool contains commands:
 
 ✓ aapt, aapt2 Android 11
 
-✓ 7-zip
-
-v.v
+✓ 7-zip 
 
 
 And the add-ons come in the future.
