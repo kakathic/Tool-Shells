@@ -1,15 +1,16 @@
 Notes: 1.4
 
-Batch decoding feature added
 
-Modified decoding feature.
+- Batch decoding feature added
 
-Add utility tool
+- Modified decoding feature.
 
-Baksmali, Smali
+- Add utility tool
 
-Tool java
++ Baksmali, Smali
 
-Dex tool
++ Tool java
 
-Add hidden status bar icon.
++ Dex tool
+
+- Add hidden status bar icon.
