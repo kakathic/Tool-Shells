@@ -18,6 +18,25 @@ V.v
 
 #### [Tool-Tool.apk](https://github.com/kakathic/Tool-Tool/releases/download/K1.1/Tool-Tool.apk)
 
+✓ Java JDK 15
+
+✓ Apktool 2.5.1 beta, 2.5.0, 2.4.1
+
+✓ Baksmali, Smali 2.5.2
+
+✓ Apksigner Support key V4
+
+✓ Dex Tool 2.1
+
+✓ Busybox, Toybox
+
+✓ Zip, zipalign, zipsigner
+
+✓ aapt, aapt2 Android 11
+
+✓ 7-zip
+
+V.v
 
 
 And the add-ons come in the future.
