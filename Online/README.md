@@ -28,6 +28,23 @@ JDK=J1.0
 Update JDK Java 15
 
 
+Notes: 1.5
+
+
+- Added Apksigner automatically selects the version
+
+- Add 7 zip
+
+- Add zipsigner
+
+- Add zipalign
+
+- Add update notification
+
+- Edit menu theme
+
+- Fix error
+
 
 Notes: 1.4
 
