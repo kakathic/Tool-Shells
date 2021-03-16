@@ -1,16 +1,16 @@
+Notes: 1.5
 
-Notes: 1.4
 
-- Batch decoding feature added
+- Added Apksigner automatically selects the version
 
-- Modified decoding feature.
+- Add 7 zip
 
-- Add utility tool
+- Add zipsigner
 
-+ Baksmali, Smali
+- Add zipalign
 
-+ Tool java
+- Add update notification
 
-+ Dex tool
+- Edit menu theme
 
-- Add hidden status bar icon.
+- Fix error
