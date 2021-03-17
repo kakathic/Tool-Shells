@@ -2,28 +2,28 @@
 
 
 
-Version=K1.1
+Version=1.2
 
 Apk's version
 
 
 
 
-Menu=1.4
+Menu=1.5
 
 Update the feature xml
 
 
 
 
-Tooltar=1.4
+Tooltar=T1.0
 
 Update system commands
 
 
 
 
-JDK=J1.0
+JDK=J1.1
 
 Update JDK Java 15
 
