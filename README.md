@@ -8,7 +8,7 @@ Support to install apk files, apks, apkm, xapk etc.
 
 The Tool Tool contains commands:
 
-✓ Java JDK 15
+✓ Java JDK 16
 
 ✓ Apktool 2.5.1 beta, 2.5.0, 2.4.1
 
