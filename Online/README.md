@@ -23,7 +23,7 @@ Update system commands
 
 
 
-JDK=J1.1
+JDK=J1.2
 
 Update JDK Java 15
 
