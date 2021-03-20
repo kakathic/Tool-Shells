@@ -25,4 +25,4 @@ Update system commands
 
 JDK=J1.2
 
-Update JDK Java 15
+Update JDK Java 16
