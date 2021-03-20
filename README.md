@@ -4,7 +4,7 @@ Is an application to edit the apk.
 
 Support to install apk files, apks, apkm, xapk etc.
 
-#### [Tool-Tool.apk](https://github.com/kakathic/Tool-Tool/releases/download/K1.1/Tool-Tool.apk)
+#### [Tool-Tool.apk](https://github.com/kakathic/Tool-Tool/releases/download/1.2/Tool-Tool.apk)
 
 The Tool Tool contains commands:
 
