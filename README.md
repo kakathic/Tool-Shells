@@ -38,13 +38,9 @@ Application is still in development.
 
 Use the source code:
 
-[Apktool](https://github.com/iBotPeaches/Apktool) | [Baksmali](https://github.com/JesusFreke/smali)
+[Apktool](https://github.com/iBotPeaches/Apktool) | [Baksmali](https://github.com/JesusFreke/smali) | [Kr-scripts](https://github.com/helloklf/kr-scripts) | [Buysbox](https://github.com/Magisk-Modules-Repo/busybox-ndk)
 
-[Kr-scripts](https://github.com/helloklf/kr-scripts) | [Buysbox](https://github.com/Magisk-Modules-Repo/busybox-ndk)
-
-[Toybox](http://landley.net/toybox/bin) | [Java JDK15](https://github.com/AdoptOpenJDK/openjdk15-binaries)
-
-[Dex Tool](https://github.com/pxb1988/dex2jar) | [Apksigner](https://github.com/fornwall/apksigner)
+[Toybox](http://landley.net/toybox/bin) | [Java JDK15](https://github.com/AdoptOpenJDK/openjdk15-binaries) | [Dex Tool](https://github.com/pxb1988/dex2jar) | [Apksigner](https://github.com/fornwall/apksigner)
 
 [Zip](https://github.com/Magisk-Modules-Repo/zipsigner)
 
