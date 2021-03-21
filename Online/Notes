@@ -16,6 +16,8 @@ Tính năng mới:
 
 - Cập nhật JDK 16 mới nhất
 
+- Sửa lỗi không xây dựng lại apk được
+
 Tính năng sắp thêm:
 
 + Cho phép Cập nhật JDK bằng tệp tar.gz
