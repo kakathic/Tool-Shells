@@ -4,7 +4,7 @@ Phát hành chính thức từ phiên bản 1.6 trở đi.
 
 Tính năng mới:
 
-- sửa đổi giao diện
+- Sửa đổi giao diện
 
 - Thêm Mô đun
 
@@ -17,6 +17,8 @@ Tính năng mới:
 - Cập nhật JDK 16 mới nhất
 
 - Sửa lỗi không xây dựng lại apk được
+
+- Sửa đổi không đổi phiên bản Apktool được
 
 Tính năng sắp thêm:
 
