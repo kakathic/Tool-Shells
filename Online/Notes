@@ -1,4 +1,4 @@
-Thông báo
+Ghi chú
 
 Được cập nhật lúc: 21.3.2021 | 22:57
 
@@ -16,6 +16,8 @@ Tính năng mới:
 
 - Cập nhật JDK 16 mới nhất
 
-- Sửa lỗi không xây dựng lại apk được
+Sửa lỗi: 
 
-- Sửa đổi không đổi phiên bản Apktool được
+- Xây dựng apk
+
+- Chuyển đổi phiên bản Apktool
