@@ -9,7 +9,7 @@ Apk's version
 
 
 
-Menu=1.6
+Menu=1.7
 
 Update the feature xml
 
