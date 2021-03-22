@@ -26,7 +26,7 @@ The Tool Tool contains commands:
 
 ✓ 7-zip 
 
-#### [Telegram](https://t.me/Tool_Tool)
+#### [Telegram](https://t.me/Tool_Tool) Group
 
 And the add-ons come in the future.
 
