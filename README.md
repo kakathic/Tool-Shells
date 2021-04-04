@@ -1,12 +1,12 @@
-# Tool Tool
+# Tool Terminal
 
 Is an application to edit the apk.
 
 Support to install apk files, apks, apkm, xapk etc.
 
-#### [Tool-Tool.apk](https://github.com/kakathic/Tool-Tool/releases/download/1.2/Tool-Tool.apk)
+#### [Tool-Terminal.apk](https://github.com/kakathic/Tool-Tool/releases/download/1.2/Tool-Tool.apk)
 
-The Tool Tool contains commands:
+The Tool Terminal contains commands:
 
 ✓ Java JDK 16
 
@@ -26,7 +26,7 @@ The Tool Tool contains commands:
 
 ✓ 7-zip 
 
-#### [Telegram](https://t.me/Tool_Tool) Group
+#### [Telegram](https://t.me/Tool_Terminal) Group
 
 And the add-ons come in the future.
 
