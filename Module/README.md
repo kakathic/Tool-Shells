@@ -1,6 +1,5 @@
-<group>
+
 <text title="Module Online"/>
-</group>
 
 <group>
 <page visible="[ -e $MODULE_PATH/jd-cli-111 ] &amp;&amp; echo 0 || echo 1"
