@@ -1,4 +1,4 @@
-
+<text/>
 <text>
 <slice color="#1CA4FF" size="30">Online</slice>
 </text>
