@@ -1,5 +1,7 @@
 
-<text title="Online"/>
+<text>
+<slice color="#1CA4FF" size="30">Online</slice>
+</text>
 
 <group>
 <page visible="[ -e $MODULE_PATH/jd-cli-111 ] &amp;&amp; echo 0 || echo 1"
