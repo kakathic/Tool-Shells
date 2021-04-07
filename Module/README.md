@@ -1,4 +1,5 @@
-<group title="Module Online">
+<group>
+<text title="Module Online"/>
 </group>
 
 <group>
