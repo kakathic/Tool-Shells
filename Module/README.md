@@ -1,6 +1,6 @@
 <text/>
 <text>
-<slice color="#1CA4FF" size="30">Online</slice>
+<slice color="#1CA4FF" size="20">Online</slice>
 </text>
 
 <group>
