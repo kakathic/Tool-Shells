@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+
 
 <group>
 <page visible="[ -e $MODULE_PATH/jd-cli-111 ] &amp;&amp; echo 0 || echo 1"
