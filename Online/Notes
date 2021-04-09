@@ -1,24 +1,14 @@
-Ghi chú
+Phát hành
 
 Cập nhật lúc: 09:24 | 09.04.2021 | GMT+7
 
-
 Tính năng mới:
 
- - Sửa đổi giao diện
+ - Hỗ trợ phiên bản không root
 
- - Thêm Mô đun
 
- - Thêm tính năng sao lưu Apks và apk
+Lưu ý:
 
- - Thêm nhiều tiện ích cơ bản
+ - Android 11 nên root bởi vì khi xử lý tệp tin nó sẽ nhanh hơn so với không root.
 
- - Sửa đổi hiển thị thông tin thiết bị
-
- - Cập nhật JDK 16 mới nhất
-
-Sửa lỗi: 
-
- - Xây dựng apk
-
- - Chuyển đổi phiên bản Apktool
+ - Các tính năng root sẽ bị ẩn nếu thiết bị của bạn chưa root.
