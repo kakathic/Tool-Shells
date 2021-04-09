@@ -7,17 +7,17 @@ Version=1.2
 Apk's version
 
 
-Menu=1.7
+Menu=1.8
 
 Update the feature xml
 
 
-Tooltar=T1.1
+Tooltar=T1.2
 
 Update system commands
 
 
-JDK=J1.2
+JDK=J1.3
 
 Update JDK Java 16
 
