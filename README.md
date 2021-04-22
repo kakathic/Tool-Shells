@@ -10,7 +10,7 @@ Support to install apk files, apks, apkm, xapk etc.
 
 The Tool Terminal contains commands:
 
-✓ Java JDK 16
+✓ Java JRE 16
 
 ✓ Apktool 2.5.1 beta, 2.5.0, 2.4.1
 
