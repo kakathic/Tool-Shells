@@ -6,7 +6,7 @@ Is an application to edit the apk.
 
 Support to install apk files, apks, apkm, xapk etc.
 
-#### [Tool-Terminal.apk](https://github.com/kakathic/Tool-Terminal/releases/download/1.3/Tool-Terminal.apk)
+#### [Tool-Terminal.apk](https://github.com/kakathic/Tool-Terminal/releases/download/1.4/Terminal.apk)
 
 The Tool Terminal contains commands:
 
