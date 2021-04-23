@@ -20,7 +20,7 @@ rm -fr $TMPDIR/modun.zip
 <group>
 <action reload="true" visible="[ -e $MODULE_PATH/cfr-111 ] &amp;&amp; echo 0 || echo 1">
 <title>Cfr decompiler</title>
-<desc>Download Java cfr decompiler tool, Class to java</desc>
+<desc>Java cfr decompiler tool, Class to java</desc>
 <summary sh="echo Download"/>
 <script>
 wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/cfr-111.zip2 -O $TMPDIR/modun.zip 2>/dev/null
