@@ -1,9 +1,4 @@
 
-<text/>
-<text>
-<slice color="#1CA4FF" size="20">Online</slice>
-</text>
-
 <group>
 <action warning="Do you want to download it?" auto-off="true" reload="true" visible="[ -e $MODULE_PATH/jd-cli-111 ] &amp;&amp; echo 0 || echo 1">
 <title>Jd-cli decompiler</title>
