@@ -5,7 +5,7 @@
 </text>
 
 <group>
-<action warning="Do you want to download it?" reload="true" visible="[ -e $MODULE_PATH/jd-cli-111 ] &amp;&amp; echo 0 || echo 1">
+<action warning="Do you want to download it?" auto-off="true" reload="true" visible="[ -e $MODULE_PATH/jd-cli-111 ] &amp;&amp; echo 0 || echo 1">
 <title>Jd-cli decompiler</title>
 <desc>Java jd-cli decompiler tool, Class to java</desc>
 <summary sh="echo Download"/>
@@ -18,7 +18,7 @@ rm -fr $TMPDIR/modun.zip
 </group>
 
 <group>
-<action warning="Do you want to download it?" reload="true" visible="[ -e $MODULE_PATH/cfr-111 ] &amp;&amp; echo 0 || echo 1">
+<action warning="Do you want to download it?" auto-off="true" reload="true" visible="[ -e $MODULE_PATH/cfr-111 ] &amp;&amp; echo 0 || echo 1">
 <title>Cfr decompiler</title>
 <desc>Java cfr decompiler tool, Class to java</desc>
 <summary sh="echo Download"/>
