@@ -28,7 +28,7 @@ The Tool Terminal contains commands:
 
 ✓ 7-zip 
 
-#### [Telegram](https://t.me/Tool_Terminal) Group, [4pda](https://4pda.ru/forum/index.php?showtopic=1023049)
+#### [Telegram](https://t.me/Tool_Terminal), [4pda](https://4pda.ru/forum/index.php?showtopic=1023049)
 
 And the add-ons come in the future.
 
