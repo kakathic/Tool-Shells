@@ -45,7 +45,7 @@ tar -xJf $MODULE_PATH/phptest/php-$CPU -C $START_DIR/kr-script 2>/dev/null
 
 <group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="[ -e $MODULE_PATH/python ] &amp;&amp; echo 0 || echo 1">
-<title>PYTHON</title>
+<title>Python</title>
 <desc>Install the device python</desc>
 <summary sh="echo Download"/>
 <script>
