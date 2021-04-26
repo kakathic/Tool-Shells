@@ -41,3 +41,23 @@ tar -xJf $MODULE_PATH/phptest/php-$CPU -C $START_DIR/kr-script 2>/dev/null
 </script>
 </action>
 </group>
+
+
+<group>
+<action warning="You want to install the module ?" auto-off="true" reload="true" visible="[ -e $MODULE_PATH/python ] &amp;&amp; echo 0 || echo 1">
+<title>Python</title>
+<desc>Install the device python</desc>
+<summary sh="echo Download"/>
+<script>
+echo "Downloading..."
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/python-$CPU.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
+rm -fr $TMPDIR/modun.zip
+echo
+echo "Installing..."
+tar -xJf $MODULE_PATH/python/python-$CPU -C $START_DIR/kr-script 2>/dev/null
+</script>
+</action>
+</group>
+
+
