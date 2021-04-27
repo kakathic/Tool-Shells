@@ -12,11 +12,11 @@ The Tool Terminal contains commands:
 
 ✓ Java JRE 16
 
-✓ Apktool 2.5.1 beta, 2.5.0, 2.4.1
+✓ Apktool 2.5.1
 
 ✓ Baksmali, Smali 2.5.2
 
-✓ Apksigner Support key V4
+✓ Apksigner V4
 
 ✓ Dex Tool 2.1
 
