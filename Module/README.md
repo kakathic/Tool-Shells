@@ -62,7 +62,7 @@ tar -xJf $MODULE_PATH/python/python-$CPU -C $START_DIR/kr-script 2>/dev/null
 
 <group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="[ -e $MODULE_PATH/curl ] &amp;&amp; echo 0 || echo 1">
-<title>CURL</title>
+<title>Curl</title>
 <desc>Install the device curl</desc>
 <summary sh="echo Download"/>
 <script>
