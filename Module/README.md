@@ -15,6 +15,8 @@ xem2="Download"
 fi
 }
 
+
+
 xem "jadxxx" "1.0"
 
 echo '<group>
@@ -24,8 +26,8 @@ echo '<group>
 <summary sh="echo '$xem2'"/>
 <script>
 echo "Downloading..."
-rm -fr $MODULE_PATH/$url/*
-wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/$url.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+rm -fr $MODULE_PATH/'$url'/*
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/'$url'.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
@@ -41,11 +43,13 @@ echo '<group>
 <summary sh="echo '$xem2'"/>
 <script>
 echo "Downloading..."
-rm -fr $MODULE_PATH/$url/*
-wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/$url.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+rm -fr $MODULE_PATH/'$url'/*
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/'$url'.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
+
+
 
 xem "curl" "1.0"
 
@@ -56,8 +60,8 @@ echo '<group>
 <summary sh="echo '$xem2'"/>
 <script>
 echo "Downloading..."
-rm -fr $MODULE_PATH/$url/*
-wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/$url.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+rm -fr $MODULE_PATH/'$url'/*
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/'$url'.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
