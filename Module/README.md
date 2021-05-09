@@ -28,3 +28,20 @@ unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
 
+
+
+xem "$MODULE_PATH/AXMLPrinter2" "1.0"
+
+echo '<group>
+<action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
+<title>AXMLPrinter</title>
+<desc>Xml decoding tool in apk</desc>
+<summary sh="echo '$xem2'"/>
+<script>
+echo "Downloading..."
+rm -fr $MODULE_PATH/AXMLPrinter2/*
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/AXMLPrinter2.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
+rm -fr $TMPDIR/modun.zip
+</script></action></group>'
+
