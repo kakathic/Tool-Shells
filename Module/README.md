@@ -1,6 +1,8 @@
 xem() {
-if [ -e "$1" ];then
-if [ -e "$1/$2" ];then
+url="$1"
+url2="$2"
+if [ -e "$MODULE_PATH/$url" ];then
+if [ -e "$MODULE_PATH/$url/$url2" ];then
 xem=0
 xem2="No Update"
 else
@@ -13,7 +15,7 @@ xem2="Download"
 fi
 }
 
-xem "$MODULE_PATH/jadxxx" "1.0"
+xem "jadxxx" "1.0"
 
 echo '<group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
@@ -22,15 +24,15 @@ echo '<group>
 <summary sh="echo '$xem2'"/>
 <script>
 echo "Downloading..."
-rm -fr $MODULE_PATH/jadxxx/*
-wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/jadxxx.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+rm -fr $MODULE_PATH/$url/*
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/$url.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
 
 
 
-xem "$MODULE_PATH/AXMLPrinter2" "1.0"
+xem "AXMLPrinter2" "1.0"
 
 echo '<group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
@@ -39,13 +41,13 @@ echo '<group>
 <summary sh="echo '$xem2'"/>
 <script>
 echo "Downloading..."
-rm -fr $MODULE_PATH/AXMLPrinter2/*
-wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/AXMLPrinter2.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+rm -fr $MODULE_PATH/$url/*
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/$url.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
 
-xem "$MODULE_PATH/curl" "1.0"
+xem "curl" "1.0"
 
 echo '<group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
@@ -54,9 +56,8 @@ echo '<group>
 <summary sh="echo '$xem2'"/>
 <script>
 echo "Downloading..."
-rm -fr $MODULE_PATH/curl/*
-wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/curl.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+rm -fr $MODULE_PATH/$url/*
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/$url.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
-
