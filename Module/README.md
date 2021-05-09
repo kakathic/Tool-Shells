@@ -13,7 +13,7 @@ xem2="Download"
 fi
 }
 
-xem "\$MODULE_PATH/jadxxx" "1.0"
+xem "$MODULE_PATH/jadxxx" "1.0"
 
 echo '<group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
