@@ -29,6 +29,7 @@ echo "Downloading..."
 rm -fr $MODULE_PATH/'$url'/*
 wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/'$url'.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
+chmod -R $MODULE_PATH/'$url'
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
 
@@ -46,6 +47,7 @@ echo "Downloading..."
 rm -fr $MODULE_PATH/'$url'/*
 wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/'$url'.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
+chmod -R $MODULE_PATH/'$url'
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
 
@@ -63,5 +65,6 @@ echo "Downloading..."
 rm -fr $MODULE_PATH/'$url'/*
 wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/'$url'.zip2 -O $TMPDIR/modun.zip 2>/dev/null
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
+chmod -R $MODULE_PATH/'$url'
 rm -fr $TMPDIR/modun.zip
 </script></action></group>'
