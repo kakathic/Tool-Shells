@@ -13,8 +13,6 @@ xem2="Download"
 fi
 }
 
-
-
 xem "\$MODULE_PATH/jadxxx" "1.0"
 
 echo '<group>
