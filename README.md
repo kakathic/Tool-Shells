@@ -10,7 +10,7 @@ Support to install apk files, apks, apkm, xapk etc.
 
 All modules are synthesized:
 
-### [Module](https://github.com/kakathic/Tool-Terminal/releases/tag/module)
+#### [Module](https://github.com/kakathic/Tool-Terminal/releases/tag/module)
 
 The Tool Terminal contains commands:
 
