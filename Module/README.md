@@ -17,7 +17,7 @@ fi
 
 
 
-xem "jadxxx" "1.0"
+xem "jadxxx" "1.1"
 
 echo '<group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
@@ -27,10 +27,13 @@ echo '<group>
 <script>
 echo "Downloading..."
 rm -fr $MODULE_PATH/'$url'/*
-wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/'$url'.zip2 -O $TMPDIR/modun.zip 2>/dev/null
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/jadx.aa -O $TMPDIR/jadx.aa 2>/dev/null
+wget -q https://github.com/kakathic/Tool-Terminal/raw/master/Module/jadx.ab -O $TMPDIR/jadx.ab 2>/dev/null
+cat $TMPDIR/jadx.* > $TMPDIR/modun.zip
 unzip -oq $TMPDIR/modun.zip -d $MODULE_PATH
 chmod -R 755 $MODULE_PATH/'$url'
 rm -fr $TMPDIR/modun.zip
+rm -fr $TMPDIR/jadx.*
 </script></action></group>'
 
 
