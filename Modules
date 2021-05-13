@@ -36,7 +36,7 @@ rm -fr $TMPDIR/jadx.*
 
 
 
-xem "AXMLPrinter2" "1.0"
+xem "AXMLPrinter2" "1.1"
 
 echo '<group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
