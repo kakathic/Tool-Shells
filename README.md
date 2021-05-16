@@ -14,9 +14,9 @@ All modules are synthesized:
 
 The Tool Terminal contains commands:
 
-✓ Java JRE 16
+✓ Java JRE 11
 
-✓ Apktool 2.5.1
+✓ Apktool 2.5.0
 
 ✓ Baksmali, Smali 2.5.2
 
