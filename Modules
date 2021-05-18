@@ -74,8 +74,8 @@ xem "addfile" "1.0"
 
 echo '<group>
 <action warning="You want to install the module ?" auto-off="true" reload="true" visible="echo '$xem'">
-<title>Curl</title>
-<desc>Test run curl command</desc>
+<title>Add Language</title>
+<desc>Add a batch language file to the app</desc>
 <summary sh="echo '$xem2'"/>
 <script>
 echo "Downloading..."
