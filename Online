@@ -1,9 +1,13 @@
 Apk=1.8
 
-export testvi="Thay đổi một số thứ
+if [ "$locale" == "vi_VN" ];then
 
-Sửa đổi"
+echo "Thay đổi một số thứ
 
-export testen="Change some things
+Sửa đổ"
 
-Sửa đổi"
+else
+
+echo "Change some things"
+
+fi
