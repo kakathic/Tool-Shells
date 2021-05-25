@@ -1,13 +1,15 @@
-Apk=1.8
+Apk=1.9
 
 if [ "$locale" == "vi_VN" ];then
 
-echo "Thay đổi một số thứ
+echo "
+-Thay đổi một số thứ
 
 Sửa đổ"
 
 else
 
-echo "Change some things"
+echo "
+- Change some things"
 
 fi
