@@ -3,14 +3,14 @@ Apk=1.9
 if [ "$locale" == "vi_VN" ];then
 
 echo "
-- Cập nhật mới nhất
+- Cập nhật mới nhất 25.05.2021
 
 - Fix"
 
 else
 
 echo "
-- Latest updates
+- Latest updates 25.05.2021
 
 - Fix"
 
