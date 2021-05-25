@@ -3,13 +3,15 @@ Apk=1.9
 if [ "$locale" == "vi_VN" ];then
 
 echo "
-- Thay đổi một số thứ
+- Cập nhật mới nhất
 
-- Sửa đổ"
+- Fix"
 
 else
 
 echo "
-- Change some things"
+- Latest updates
+
+- Fix"
 
 fi
