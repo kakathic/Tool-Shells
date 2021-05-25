@@ -3,9 +3,9 @@ Apk=1.9
 if [ "$locale" == "vi_VN" ];then
 
 echo "
--Thay đổi một số thứ
+- Thay đổi một số thứ
 
-Sửa đổ"
+- Sửa đổ"
 
 else
 
