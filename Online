@@ -1,16 +1,20 @@
-Apk=1.9
+Apk=2.0
 
 if [ "$locale" == "vi_VN" ];then
 
 echo "
-- Cập nhật mới nhất: 25.05.2021
+- Cập nhật mới nhất: 02.06.2021
+
+- Thêm lệnh curl
 
 - Fix"
 
 else
 
 echo "
-- Latest updates: 25.05.2021
+- Latest updates: 02.06.2021
+
+- Add curl command
 
 - Fix"
 
