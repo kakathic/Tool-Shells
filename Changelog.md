@@ -1,12 +1,12 @@
-- Tool Shells
+Tool Shells Update: 20.02.2022
+
+- Version=2.2.0
 
 - Support Root and Non-Root
 
-- Update: 20.02.2022
-
 - Latest updates:
 
-                 + Version=2.2.0
+                 + 
                  +
 
 - Basic Features:
