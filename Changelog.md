@@ -1,15 +1,15 @@
 Tool Shells Update: 20.02.2022
 
-- Version=2.2.1
+Version=2.2.1
 
-- Support Root and Non-Root
+Support Root and Non-Root
 
-- Latest updates:
+Latest updates:
 
                  + Test
                  + Test
 
-- Basic Features:
+Basic Features:
 
                  + Latest Apktool 2.6.1 beta 
                  + Apksigner 
