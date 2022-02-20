@@ -6,8 +6,8 @@
 
 - Latest updates:
 
-                 + Test 
-                 + Test
+                 + Version=2.2.0
+                 +
 
 - Basic Features:
 
