@@ -6,8 +6,8 @@ Tool Shells Update: 20.02.2022
 
 - Latest updates:
 
-                 + 
-                 +
+                 + Test
+                 + Test
 
 - Basic Features:
 
@@ -20,4 +20,4 @@ Tool Shells Update: 20.02.2022
                  + Edit hex code 
                  + Support to install apk, apks, apkm, xapk
 
-- And other features
+And other features
