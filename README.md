@@ -1,4 +1,4 @@
-# Tool Terminal
+# Tool Shells
 
 Supports both root and non-root
 
