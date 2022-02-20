@@ -12,9 +12,9 @@ All modules are synthesized:
 
 #### [Module](https://github.com/kakathic/Tool-Terminal/releases/tag/module)
 
-The Tool Terminal contains commands:
+The Tool Shells contains commands:
 
-✓ Java JDK 11
++ JDK 17
 
 ✓ Apktool 2.5.0
 
@@ -47,11 +47,7 @@ Use the source code:
 
 [Apktool](https://github.com/iBotPeaches/Apktool) | [Baksmali](https://github.com/JesusFreke/smali) | [Kr-scripts](https://github.com/helloklf/kr-scripts) | [Buysbox](https://github.com/Magisk-Modules-Repo/busybox-ndk)
 
-[Toybox](http://landley.net/toybox/bin) | [Java JDK](https://adoptopenjdk.net) | [Dex Tool](https://github.com/pxb1988/dex2jar) | [Zip](https://github.com/Magisk-Modules-Repo/zipsigner)
-
-[Apksigner](https://github.com/fornwall/apksigner) | [Jadx](https://github.com/skylot/jadx)
-
-
+[Toybox](http://landley.net/toybox/bin) | [Java JDK](https://adoptopenjdk.net) | [Dex Tool](https://github.com/pxb1988/dex2jar)
 
 Please contribute ideas to develop the application to be perfect.
 
