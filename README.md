@@ -8,7 +8,7 @@ Support to install apk files, apks, apkm, xapk etc.
 
 #### [Tool-Shells.apk](https://github.com/kakathic/Tool-Shells/releases/tag/Apk) 
 
-- Basic Features:
+Basic Features:
 
 + Latest Apktool 2.6.1 beta 
 + Apksigner 
@@ -19,7 +19,7 @@ Support to install apk files, apks, apkm, xapk etc.
 + Edit hex code 
 + Support to install apk, apks, apkm, xapk
 
-- And other features
+And other features
 
 #### Group [Telegram](https://t.me/Tool_Terminal), [4pda](https://4pda.ru/forum/index.php?showtopic=1023049)
 
