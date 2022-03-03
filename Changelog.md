@@ -1,17 +1,18 @@
-Tool Shells Update: 20.02.2022
+Tool Shells Update: 03.03.2022
 
-Version=2.2.0
+Version=2.2.1
 
 Support Root and Non-Root
 
 Latest updates:
 
-                 + Test
-                 + Test
+                 + Add YouTube mod app
+                 + Add YouTube music mod app
+                 + Add Apktool 2.6.1
 
 Basic Features:
 
-                 + Latest Apktool 2.6.1 beta 
+                 + Latest Apktool 2.6.1 
                  + Apksigner 
                  + JDK 17 
                  + Apk Split > Apk 
