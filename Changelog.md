@@ -2,7 +2,7 @@ Update time: 03.03.2022
 
 Note: I am trying to come up with ideas, you can comment in telegram group or github, 4pda so I can add more features to the app, it will be free forever.
 
-Version: 2.2.2
+Version: 2.2.2 (Coming soon)
 
 + Add encryption apk
 + Add decryption apk
