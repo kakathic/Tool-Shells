@@ -35,7 +35,9 @@ Use the source code:
 
 [Apktool](https://github.com/iBotPeaches/Apktool) | [Baksmali](https://github.com/JesusFreke/smali) | [Kr-scripts](https://github.com/helloklf/kr-scripts) | [Buysbox](https://github.com/Magisk-Modules-Repo/busybox-ndk)
 
-[Toybox](https://github.com/landley/toybox) | [Java JDK](https://adoptium.net) | [Dex Tool](https://github.com/pxb1988/dex2jar)
+[Toybox](https://github.com/landley/toybox) | [Java JDK](https://adoptium.net) | [Dex Tool](https://github.com/pxb1988/dex2jar) | [Fernflower](https://github.com/fesh0r/fernflower)
+
+[Jadx](https://github.com/skylot/jadx) | [Procyon](https://github.com/mstrobel/procyon) | [CFR](https://github.com/leibnitz27/cfr)
 
 Please contribute ideas to develop the application to be perfect.
 
