@@ -39,4 +39,4 @@ Use the source code:
 
 Please contribute ideas to develop the application to be perfect.
 
-![Cat](https://github.com/kakathic/Tool-Shells/releases/download/Img/IMG.jpg)
+![Optional Text](https://github.com/kakathic/Tool-Shells/releases/download/Img/IMG.jpg)
