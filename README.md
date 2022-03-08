@@ -39,9 +39,9 @@ Use the source code:
 
 Please contribute ideas to develop the application to be perfect.
 
-![Img](../master/Image/image.png)
-![Img](../master/Image/image1.png)
-![Img](../master/Image/image2.png)
-![Img](../master/Image/image3.png)
-![Img](../master/Image/image4.png)
-![Img](../master/Image/image5.png)
+![Img](../master/Image/image.jpg)
+![Img](../master/Image/image1.jpg)
+![Img](../master/Image/image2.jpg)
+![Img](../master/Image/image3.jpg)
+![Img](../master/Image/image4.jpg)
+![Img](../master/Image/image5.jpg)
