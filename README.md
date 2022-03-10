@@ -40,10 +40,9 @@ Use the source code:
 [Jadx](https://github.com/skylot/jadx) | [Procyon](https://github.com/mstrobel/procyon) | [CFR](https://github.com/leibnitz27/cfr)
 
 Please contribute ideas to develop the application to be perfect.
-
-![Img](https://github.com/kakathic/Tool-Shells/raw/master/Image/image.jpg)
-![Img](https://github.com/kakathic/Tool-Shells/raw/master/Image/image1.jpg)
-![Img](https://github.com/kakathic/Tool-Shells/raw/master/Image/image2.jpg)
-![Img](https://github.com/kakathic/Tool-Shells/raw/master/Image/image3.jpg)
-![Img](https://github.com/kakathic/Tool-Shells/raw/master/Image/image4.jpg)
-![Img](https://github.com/kakathic/Tool-Shells/raw/master/Image/image5.jpg)
+<img src="https://github.com/kakathic/Tool-Shells/raw/master/Image/image.jpg" height="auto" width="49%" />
+<img src="https://github.com/kakathic/Tool-Shells/raw/master/Image/image1.jpg" height="auto" width="49%" />
+<img src="https://github.com/kakathic/Tool-Shells/raw/master/Image/image2.jpg" height="auto" width="49%" />
+<img src="https://github.com/kakathic/Tool-Shells/raw/master/Image/image3.jpg" height="auto" width="49%" />
+<img src="https://github.com/kakathic/Tool-Shells/raw/master/Image/image4.jpg" height="auto" width="49%" />
+<img src="https://github.com/kakathic/Tool-Shells/raw/master/Image/image5.jpg" height="auto" width="49%" />
