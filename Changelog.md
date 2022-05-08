@@ -2,6 +2,11 @@ Update time: 08.05.2022
 
 Note: I am trying to come up with ideas, you can comment in telegram group or github, 4pda so I can add more features to the app, it will be free forever.
 
+Next version (coming soon)
+
++ Update java jdk17
++ Fix
+
 Version: 2.2.4
 
 + Add Import signature
