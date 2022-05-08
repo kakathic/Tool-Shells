@@ -33,8 +33,8 @@ Version: 2.2.2
 
 Version: 2.2.1
 
-+ Add YouTube mod app
-+ Add YouTube music mod app
++ Add YouTube mod app (x)
++ Add YouTube music mod app (x)
 + Add Apktool 2.6.1
 
 Version: 2.2.0
