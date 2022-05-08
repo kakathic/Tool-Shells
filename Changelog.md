@@ -4,6 +4,7 @@ Note: I am trying to come up with ideas, you can comment in telegram group or gi
 
 Version: 2.2.4
 
++ Add Import signature
 + Add Magisk module & Add-on
 + Fix
 
