@@ -4,6 +4,7 @@ Note: I am trying to come up with ideas, you can comment in telegram group or gi
 
 Next version (coming soon)
 
++ Add feature to automatically turn off app updates
 + Update java jdk17
 + Fix
 
