@@ -1,1 +1,23 @@
 kakathic=123
+
+Module () {
+cat << DOK | sed2
+<group>
+<action warning="$sltc2" visible="test -e $3 && echo 1 || echo 0">
+<title>$1</title>
+<desc>$2</desc>
+<set>
+ecgi "€loading"
+Taive "$4" "€TEMP_DIR/Test.zip"
+mkdir -p "€TOME/Module"
+unzip -o "€TEMP_DIR/Test.zip" -d "€TOME/Module"
+chmod -R 777 "€TOME/Module"
+</set>
+</action>
+</group>
+DOK
+}
+
+
+Module "Hack Proxy" "Giúp máy bạn có mạng, thay đổi ip proxy" "/sdcard/Tools/.Hack" \
+"https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip"
