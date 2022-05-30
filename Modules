@@ -1,4 +1,5 @@
 kakathic=123
+sed2 () { sed -e 's|\&\&|\&amp;\&amp;|g' -e 's|†|\&apos;|g' -e 's|€|$|g' -e 's|£|\&#xA;|g'; }
 
 Module () {
 cat << DOK | sed2
