@@ -4,7 +4,7 @@ sed2 () { sed -e 's|\&\&|\&amp;\&amp;|g' -e 's|†|\&apos;|g' -e 's|€|$|g' -e 
 Module () {
 cat << DOK | sed2
 <group>
-<action warning="Quá trình này sẽ cần dùng đến Mạng dữ liệu hoặc WiFi vui lòng bật và chọn Thực hiện." reload="true" visible="test -e $3 && echo 0 || echo 1">
+<action warning="Quá trình này sẽ cần dùng đến Mạng dữ liệu hoặc WiFi vui lòng bật và chọn Thực hiện." auto-off="true" reload="true" visible="test -e $3 && echo 0 || echo 1">
 <title>$1</title>
 <desc>$2</desc>
 <set>
