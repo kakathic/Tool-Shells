@@ -7,7 +7,8 @@ Version: 2.2.7
 + Update apktool 2.6.2
 + Fix all error
 + Add some small features 
-+ Modified magisk module 
++ Modified magisk module
++ Please go to the github homepage to download the 2.2.7 live update will not work when going from 2.2.6 to 2.2.7 
 
 Version: 2.2.6
 
