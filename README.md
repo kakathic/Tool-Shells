@@ -6,7 +6,7 @@ Is an application to edit the apk.
 
 Support to install apk files, apks, apkm, xapk etc.
 
-#### Download V2.2.6: [Tool-Shells.apk](https://github.com/kakathic/Tool-Shells/releases/download/V2.2.6/Tool-Shells.apk) 
+#### Download V2.2.7: [Tool-Shells.apk](https://github.com/kakathic/Tool-Shells/releases/download/2.2.7/Tool-Shells.apk) 
 
 Basic Features:
 
