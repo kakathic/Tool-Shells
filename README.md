@@ -6,11 +6,11 @@ Is an application to edit the apk.
 
 Support to install apk files, apks, apkm, xapk etc.
 
-#### Download V2.2.7: [Tool-Shells.apk](https://github.com/kakathic/Tool-Shells/releases/download/2.2.7/Tool-Shells.apk) 
+#### Download V2.2.9: [Tool-Shells.apk](https://github.com/kakathic/Tool-Shells/releases/download/2.2.9/Tool-Shells.apk) 
 
 Basic Features:
 
-+ Latest Apktool 2.6.1
++ Latest Apktool 2.6.2
 + Apksigner 
 + JDK 17 
 + Apk Split > Apk 
