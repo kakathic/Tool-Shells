@@ -2,6 +2,11 @@ Update time: 26.06.2022
 
 Note: I am trying to come up with ideas, you can comment in telegram group or github, 4pda so I can add more features to the app, it will be free forever.
 
+Version: 2.2.9
+
++ Update apktool 2.6.2 beta
++ Update jdk
+
 Version: 2.2.7
 
 + Update apktool 2.6.2
