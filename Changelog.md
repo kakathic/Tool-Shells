@@ -1,4 +1,4 @@
-Update time: 26.06.2022
+Update time: 29.08.2022
 
 Note: I am trying to come up with ideas, you can comment in telegram group or github, 4pda so I can add more features to the app, it will be free forever.
 
