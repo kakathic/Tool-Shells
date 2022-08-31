@@ -23,6 +23,3 @@ DOK
 
 Module "Hack Proxy" "Giúp máy bạn có mạng, thay đổi ip proxy" "$TOME/Module/Hack-Proxy" \
 "https://github.com/kakathic/Hack/archive/refs/heads/Proxy.zip"
-
-Module "YouTube Cli" "Revanced's YouTube to mod editing tool" "$TOME/Module/YouTube-Cli" \
-"https://github.com/kakathic/YouTube/archive/refs/heads/Cli.zip"
